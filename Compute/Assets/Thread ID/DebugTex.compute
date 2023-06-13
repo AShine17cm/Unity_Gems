@@ -1,0 +1,41 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+#pragma kernel Multiply
+
+struct VecMatrix {
+	float3 pos;
+	float4x4 mat;
+};
+RWStructuredBuffer<VecMatrix> dataBuffer;
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+
+//[numthreads(8,8,1)]
+//void CSMain (uint3 id : SV_DispatchThreadID)
+//{
+//
+//	// <id.x,id.y> operate one pixel
+//    //Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+//	Result[id.xy] = float4(id.x /255.0, id.y/255.0, 0, 0.0);
+//}
+
+//[numthreads(8, 8, 1)]
+//void CSMain(uint3 id : SV_GroupThreadID)
+//{
+//	Result[id.xy] = float4(id.x/ 8.0, id.y/8.0, 0, 0.0);
+//}
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_GroupID)
+{
+	Result[id.xy] = float4(id.x / 32.0, id.y / 32.0, 0, 0.0);
+}
+
+[numthreads(16,1,1)]
+void Multiply(uint3 id:SV_DispatchThreadID)
+{
+	//1 D Array
+	dataBuffer[id.x].pos =mul(dataBuffer[id.x].mat, float4(dataBuffer[id.x].pos,1.0));
+}
