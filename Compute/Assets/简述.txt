@@ -1,0 +1,5 @@
+线程组的维数 对性能没影响，可以选择对计算最有意义的设置
+
+uint3 id : SV_DispatchThreadID  对应 C# 代码中的 Dispatch (x,y,z) * Compute Shader中的 numthreads(x,y,z)
+uint3 id:  SV_GroupThreadID   对应一个组内的 id, 即 numthreads(x,y,z)
+uint3 id:  SV_GroupID	对应组的id, 既Dispatch(x,y,z)
