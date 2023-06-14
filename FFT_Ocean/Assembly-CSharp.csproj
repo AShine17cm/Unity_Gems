@@ -56,14 +56,28 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DFT\DFT_Helper.cs" />
-    <Compile Include="Assets\DFT\FFT_Helper.cs" />
+    <Compile Include="Assets\Scripts\WavesCascade.cs" />
+    <Compile Include="Assets\Scripts\WavesGenerator.cs" />
     <Compile Include="Assets\DFT\Logx.cs" />
+    <Compile Include="Assets\Scripts\OceanGeometry.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\WavesSettings.cs" />
+    <Compile Include="Assets\Scripts\FastFourierTransform.cs" />
+    <Compile Include="Assets\DFT\FFT_Helper.cs" />
+    <Compile Include="Assets\DFT\DFT_Helper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Ocean\ComputeShaders\InitSpectrum.compute" />
     <None Include="Assets\DFT\FFT 理论.txt" />
+    <None Include="Assets\Ocean\ComputeShaders\TimeDSpectrum.compute" />
+    <None Include="Assets\Shaders\Ocean.shader" />
+    <None Include="Assets\ComputeShaders\WavesTexturesMerger.compute" />
     <None Include="Assets\Ocean\ComputeShaders\简述.txt" />
     <None Include="Assets\Ocean\ComputeShaders\FFT.compute" />
+    <None Include="Assets\ComputeShaders\TimeDependentSpectrum.compute" />
+    <None Include="Assets\ComputeShaders\FastFourierTransform.compute" />
+    <None Include="Assets\ComputeShaders\InitialSpectrum.compute" />
+    <None Include="Assets\Ocean\ComputeShaders\WavesTexturesMerger.compute" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
