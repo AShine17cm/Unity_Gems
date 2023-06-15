@@ -12,36 +12,31 @@ public class WavesGenerator : MonoBehaviour
     public float lengthScale2 = 5;
 
     public ComputeShader fftShader;
-    public ComputeShader initialSpectrumShader;
-    public ComputeShader timeDependentSpectrumShader;
-    public ComputeShader texturesMergerShader;
+    public ComputeShader init_Spectrum;
+    public ComputeShader timed_Spectrum;
+    public ComputeShader texs_Merge;
 
     //生成数据
     public WavesCascade cascade0;
     public WavesCascade cascade1;
     public WavesCascade cascade2;
 
-    Texture2D gaussianNoise;
     FastFourierTransform fft;
+    Texture2D gaussianNoise;
     Texture2D physicsReadback;
 
+    public RenderTexture debugTex;
     private void Awake()
     {
-        Application.targetFrameRate = -1;
-        fft = new FastFourierTransform(size, fftShader);
+        Application.targetFrameRate = 60;
+        fft = new FastFourierTransform(size, fftShader);    //预计算 蝶形网络 交换数据
         gaussianNoise = GetNoiseTexture(size);
 
-        cascade0 = new WavesCascade(size, initialSpectrumShader, timeDependentSpectrumShader, texturesMergerShader, fft, gaussianNoise);
-        cascade1 = new WavesCascade(size, initialSpectrumShader, timeDependentSpectrumShader, texturesMergerShader, fft, gaussianNoise);
-        cascade2 = new WavesCascade(size, initialSpectrumShader, timeDependentSpectrumShader, texturesMergerShader, fft, gaussianNoise);
+        cascade0 = new WavesCascade(size, init_Spectrum, timed_Spectrum, texs_Merge, fft, gaussianNoise);
+        cascade1 = new WavesCascade(size, init_Spectrum, timed_Spectrum, texs_Merge, fft, gaussianNoise);
+        cascade2 = new WavesCascade(size, init_Spectrum, timed_Spectrum, texs_Merge, fft, gaussianNoise);
 
-        InitialiseCascades();
-
-        physicsReadback = new Texture2D(size, size, TextureFormat.RGBAFloat, false);
-    }
-
-    void InitialiseCascades()
-    {
+        //初始化 Cascades
         float boundary1 = 2 * Mathf.PI / lengthScale1 * 6f;
         float boundary2 = 2 * Mathf.PI / lengthScale2 * 6f;
         cascade0.CalculateInitials(wavesSettings, lengthScale0, 0.0001f, boundary1);
@@ -51,6 +46,9 @@ public class WavesGenerator : MonoBehaviour
         Shader.SetGlobalFloat("LengthScale0", lengthScale0);
         Shader.SetGlobalFloat("LengthScale1", lengthScale1);
         Shader.SetGlobalFloat("LengthScale2", lengthScale2);
+
+        physicsReadback = new Texture2D(size, size, TextureFormat.RGBAFloat, false);
+        debugTex = fft.precomputedData;
     }
 
     private void Update()

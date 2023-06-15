@@ -14,7 +14,7 @@ RWTexture2D<float2> Buffer0;
 RWTexture2D<float2> Buffer1;
 bool PingPong;
 uint Step;
-uint Size;
+uint Size;		//256
 
 float2 ComplexMult(float2 a, float2 b)
 {
@@ -26,12 +26,13 @@ float2 ComplexExp(float2 a)
 	return float2(cos(a.y), sin(a.y)) * exp(a.x);
 }
 
+//<8,16,1> - <1,8,1> - <8,256,1>
 [numthreads(1, 8, 1)]
 void PrecomputeTwiddleFactorsAndInputIndices(uint3 id : SV_DispatchThreadID)
 {
-	uint b = Size >> (id.x + 1);
-	float2 mult = 2 * PI * float2(0, 1) / Size;
-	uint i = (2 * b * (id.y / b) + id.y % b) % Size;
+	uint b = Size >> (id.x + 1);						//128,64,32,16,8,4,2,1
+	float2 mult = 2 * PI * float2(0, 1) / Size;			//360/256
+	uint i = (2 * b * (id.y / b) + id.y % b) % Size;	
 	float2 twiddle = ComplexExp(-mult * ((id.y / b) * b));
 	PrecomputeBuffer[id.xy] = float4(twiddle.x, twiddle.y, i, i + b);
 	PrecomputeBuffer[uint2(id.x, id.y + Size / 2)] = float4(-twiddle.x, -twiddle.y, i, i + b);

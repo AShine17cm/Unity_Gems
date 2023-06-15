@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6C39D19F-5245-A25A-9EE5-4FD2B529572B}</ProjectGuid>
+    <ProjectGuid>{18E6B3D5-1B5B-912A-187C-691FF8605946}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,10 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Ocean.shader" />
-    <None Include="Assets\ComputeShaders\WavesTexturesMerger.compute" />
-    <None Include="Assets\ComputeShaders\TimeDependentSpectrum.compute" />
+    <None Include="Assets\ComputeShaders\WavesTexs_Merger.compute" />
+    <None Include="Assets\ComputeShaders\Timed_Spectrum.compute" />
     <None Include="Assets\ComputeShaders\FastFourierTransform.compute" />
-    <None Include="Assets\ComputeShaders\InitialSpectrum.compute" />
+    <None Include="Assets\ComputeShaders\Init_Spectrum.compute" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

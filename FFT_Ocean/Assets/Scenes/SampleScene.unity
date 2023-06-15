@@ -154,8 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavesGenerator: {fileID: 77222649}
   oceanMaterial: {fileID: 2100000, guid: 79f16f7e2e961cc46828737b584510ee, type: 2}
-  lengthScale: 15
-  vertexDensity: 30
 --- !u!114 &77222649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,12 +172,10 @@ MonoBehaviour:
   lengthScale1: 17
   lengthScale2: 5
   fftShader: {fileID: 7200000, guid: 38e7049002205c24c8328830bc846265, type: 3}
-  initialSpectrumShader: {fileID: 7200000, guid: 5cb4d3604a2a309418e28b4c84483b75,
-    type: 3}
-  timeDependentSpectrumShader: {fileID: 7200000, guid: 4587edbecce07574f8859b4d3866ce21,
-    type: 3}
-  texturesMergerShader: {fileID: 7200000, guid: 830e2e5e1419ea9409f3c6295083f26a,
-    type: 3}
+  init_Spectrum: {fileID: 7200000, guid: 5cb4d3604a2a309418e28b4c84483b75, type: 3}
+  timed_Spectrum: {fileID: 7200000, guid: 4587edbecce07574f8859b4d3866ce21, type: 3}
+  texs_Merge: {fileID: 7200000, guid: 830e2e5e1419ea9409f3c6295083f26a, type: 3}
+  debugTex: {fileID: 0}
 --- !u!4 &77222650
 Transform:
   m_ObjectHideFlags: 0
