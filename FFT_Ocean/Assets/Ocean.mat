@@ -184,4 +184,3 @@ Material:
     - _SSS: {r: 0.10453009, g: 0.8207547, b: 0.80671114, a: 1}
     - _SSSColor: {r: 0.1541919, g: 0.8857628, b: 0.990566, a: 1}
     - _Vect: {r: 1, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
