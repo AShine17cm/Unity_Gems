@@ -25,7 +25,7 @@ public class WavesGenerator : MonoBehaviour
     Texture2D gaussianNoise;
     Texture2D physicsReadback;
 
-    public RenderTexture debugTex;
+    public RenderTexture dx_Precompute;          //debug
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -48,7 +48,8 @@ public class WavesGenerator : MonoBehaviour
         Shader.SetGlobalFloat("LengthScale2", lengthScale2);
 
         physicsReadback = new Texture2D(size, size, TextureFormat.RGBAFloat, false);
-        debugTex = fft.precomputedData;
+        //physicsReadback = new Texture2D(8, 256, TextureFormat.RGBAFloat, false);
+        dx_Precompute = fft.precomputedData;
     }
 
     private void Update()
@@ -57,7 +58,10 @@ public class WavesGenerator : MonoBehaviour
         cascade1.CalculateWavesAtTime(Time.time);
         cascade2.CalculateWavesAtTime(Time.time);
 
-        RequestReadbacks();
+        if(Input.GetKeyUp(KeyCode.F))
+        {
+            //RequestReadbacks();
+        }
     }
 
     Texture2D GetNoiseTexture(int size)
@@ -103,10 +107,40 @@ public class WavesGenerator : MonoBehaviour
         cascade1.Dispose();
         cascade2.Dispose();
     }
-
+    //将 compute shader的计算结果保存为 贴图
+    string rtFileName;
     void RequestReadbacks()
     {
-        AsyncGPUReadback.Request(cascade0.Displacement, 0, TextureFormat.RGBAFloat, OnCompleteReadback);
+        WavesCascade wc = cascade0;
+        string post = "_0.png";
+        string path = Application.dataPath + "/records/";
+        physicsReadback = new Texture2D(size, size, TextureFormat.RGBAFloat, false);
+        rtFileName = path + "displace" + post;
+        //AsyncGPUReadback.Request(wc.Displacement, 0, TextureFormat.RGBAFloat, OnCompleteReadback);  //displace
+        rtFileName = path + "derivative" + post;
+        physicsReadback = new Texture2D(size, size, TextureFormat.RGBAFloat, true);
+        //AsyncGPUReadback.Request(wc.Derivatives, 0, TextureFormat.RGBAFloat, OnCompleteReadback);   //normal
+        rtFileName = path + "turbulence" + post;
+        //AsyncGPUReadback.Request(wc.Turbulence, 0, TextureFormat.RGBAFloat, OnCompleteReadback);    //foam
+
+        physicsReadback = new Texture2D(size, size, TextureFormat.RGFloat, false);
+        rtFileName = path + "DxDz" + post;
+        //AsyncGPUReadback.Request(wc.DxDz, 0, TextureFormat.RGFloat, OnCompleteReadback);      //displace
+        rtFileName = path + "DyDxz" + post;
+        AsyncGPUReadback.Request(wc.DyDxz, 0, TextureFormat.RGFloat, OnCompleteReadback);     //displace turb-foam
+        return;
+        rtFileName = path + "DyxDyz" + post;
+        AsyncGPUReadback.Request(wc.DyxDyz, 0, TextureFormat.RGFloat, OnCompleteReadback);    //normal
+        rtFileName = path + "DxxDzz" + post;
+        AsyncGPUReadback.Request(wc.DxxDzz, 0, TextureFormat.RGFloat, OnCompleteReadback);    //normal turb-foam
+
+        rtFileName = path + "initSpectrum"+post;
+        //AsyncGPUReadback.Request(wc.initialSpectrum, 0, TextureFormat.RGBAFloat, OnCompleteReadback);
+        rtFileName = path + "precomputedData"+post;
+        //AsyncGPUReadback.Request(wc.precomputedData, 0, TextureFormat.RGBAFloat, OnCompleteReadback);
+        rtFileName = path + "fft_precomputeData.png";
+        physicsReadback = new Texture2D(8, 256, TextureFormat.RGBAFloat, false);
+        //AsyncGPUReadback.Request(fft.precomputedData, 0, TextureFormat.RGBAFloat, OnCompleteReadback);
     }
 
     public float GetWaterHeight(Vector3 position)
@@ -130,13 +164,15 @@ public class WavesGenerator : MonoBehaviour
     {
         if (request.hasError)
         {
-            Debug.Log("GPU readback error detected.");
             return;
         }
         if (result != null)
         {
             result.LoadRawTextureData(request.GetData<Color>());
             result.Apply();
+
+            byte[] bytes = result.EncodeToPNG();
+            System.IO.File.WriteAllBytes(rtFileName, bytes);
         }
     }
 }

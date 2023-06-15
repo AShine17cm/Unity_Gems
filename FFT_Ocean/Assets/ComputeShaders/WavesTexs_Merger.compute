@@ -1,17 +1,19 @@
 ﻿#pragma kernel FillResultTextures
 
-RWTexture2D<float3> Displacement;
-RWTexture2D<float4> Derivatives;
-RWTexture2D<float4> Turbulence;
+//output s
+RWTexture2D<float3> Displacement; 
+RWTexture2D<float4> Derivatives;	//normal
+RWTexture2D<float4> Turbulence;		//foam
 
-Texture2D<float2> Dx_Dz;
-Texture2D<float2> Dy_Dxz;
-Texture2D<float2> Dyx_Dyz;
-Texture2D<float2> Dxx_Dzz;
+Texture2D<float2> Dx_Dz;			//height
+Texture2D<float2> Dy_Dxz;			//height,turb-foam
+Texture2D<float2> Dyx_Dyz;			//normal
+Texture2D<float2> Dxx_Dzz;			//normal,turb-foam
 
 float Lambda;
 float DeltaTime;
 
+//<32,32,1> - <8,8,1>  <256,256,1>
 [numthreads(8, 8, 1)]
 void FillResultTextures(uint3 id : SV_DispatchThreadID)
 {
@@ -22,6 +24,7 @@ void FillResultTextures(uint3 id : SV_DispatchThreadID)
 	
 	Displacement[id.xy] = float3(Lambda * DxDz.x, DyDxz.x, Lambda * DxDz.y);
 	Derivatives[id.xy] = float4(DyxDyz, DxxDzz * Lambda);
+
 	float jacobian = (1 + Lambda * DxxDzz.x) * (1 + Lambda * DxxDzz.y) - Lambda * Lambda * DyDxz.y * DyDxz.y;
 	Turbulence[id.xy] = Turbulence[id.xy].r + DeltaTime * 0.5 / max(jacobian, 0.5);
 	Turbulence[id.xy] = min(jacobian, Turbulence[id.xy].r);

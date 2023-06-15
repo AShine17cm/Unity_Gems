@@ -15,7 +15,7 @@ float2 ComplexMult(float2 a, float2 b)
 {
 	return float2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
 }
-
+//<32,32,1> - <8,8,1>   <256,256,1>
 [numthreads(8,8,1)]
 void CalculateAmplitudes(uint3 id : SV_DispatchThreadID)
 {

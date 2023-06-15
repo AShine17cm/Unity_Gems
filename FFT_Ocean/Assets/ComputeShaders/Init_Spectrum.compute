@@ -127,7 +127,7 @@ float ShortWavesFade(float kLength, SpectrumParameters pars)
 {
 	return exp(-pars.shortWavesFade * pars.shortWavesFade * kLength * kLength);
 }
-
+//<32,32,1>-<8,8,1>  <256,256,1>
 [numthreads(8, 8, 1)]
 void CalculateInitialSpectrum(uint3 id : SV_DispatchThreadID)
 {

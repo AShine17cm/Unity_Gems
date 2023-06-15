@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Waves Settings
   m_EditorClassIdentifier: 
   g: 9.81
-  depth: 500
+  depth: 10
   lambda: 1
   local:
     scale: 1

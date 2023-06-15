@@ -54,9 +54,9 @@
 			INTERNAL_DATA
 		};
 
-		sampler2D _Displacement_c0;
-		sampler2D _Derivatives_c0;
-		sampler2D _Turbulence_c0;
+		sampler2D _Displacement_c0;		//顶点位移
+		sampler2D _Derivatives_c0;		//法线
+		sampler2D _Turbulence_c0;		//泡沫
 
 		sampler2D _Displacement_c1;
 		sampler2D _Derivatives_c1;
@@ -140,31 +140,34 @@
 			derivatives += tex2D(_Derivatives_c2, IN.worldUV / LengthScale2) * IN.lodScales.z;
 			#endif
 
-			float2 slope = float2(derivatives.x / (1 + derivatives.z),
-				derivatives.y / (1 + derivatives.w));
+			float2 slope = float2(derivatives.x / (1 + derivatives.z), derivatives.y / (1 + derivatives.w));
 			float3 worldNormal = normalize(float3(-slope.x, 1, -slope.y));
 
 			o.Normal = WorldToTangentNormalVector(IN, worldNormal);
 
+			//泡沫
+			float jacobian = 0;
 			#if defined(CLOSE)
-			float jacobian = tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x
-				+ tex2D(_Turbulence_c1, IN.worldUV / LengthScale1).x
-				+ tex2D(_Turbulence_c2, IN.worldUV / LengthScale2).x;
+			jacobian=
+				tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x +
+				tex2D(_Turbulence_c1, IN.worldUV / LengthScale1).x +
+				tex2D(_Turbulence_c2, IN.worldUV / LengthScale2).x;
 			jacobian = min(1, max(0, (-jacobian + _FoamBiasLOD2) * _FoamScale));
 			#elif defined(MID)
-			float jacobian = tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x
-				+ tex2D(_Turbulence_c1, IN.worldUV / LengthScale1).x;
+			jacobian =
+				tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x +
+				tex2D(_Turbulence_c1, IN.worldUV / LengthScale1).x;
 			jacobian = min(1, max(0, (-jacobian + _FoamBiasLOD1) * _FoamScale));
 			#else
-			float jacobian = tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x;
+			jacobian = 
+				tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x;
 			jacobian = min(1, max(0, (-jacobian + _FoamBiasLOD0) * _FoamScale));
 			#endif
 
 			float2 screenUV = IN.screenPos.xy;
 			if (IN.screenPos.w != 0)screenUV /= IN.screenPos.w;
 
-			float backgroundDepth =
-				LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, screenUV));
+			float backgroundDepth =	LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, screenUV));
 			float surfaceDepth = UNITY_Z_0_FAR_FROM_CLIPSPACE(IN.screenPos.z);
 			float depthDifference = max(0, backgroundDepth - surfaceDepth - 0.1);
 			float foam = tex2D(_FoamTexture, IN.worldUV * 0.5 + _Time.r).r;

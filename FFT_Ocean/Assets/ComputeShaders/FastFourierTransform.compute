@@ -3,7 +3,6 @@
 #pragma kernel VerticalStepFFT
 #pragma kernel HorizontalStepInverseFFT
 #pragma kernel VerticalStepInverseFFT
-#pragma kernel Scale
 #pragma kernel Permute
 
 static const float PI = 3.1415926;
@@ -71,11 +70,11 @@ void VerticalStepFFT(uint3 id : SV_DispatchThreadID)
 			+ ComplexMult(data.rg, Buffer1[uint2(id.x, inputsIndices.y)]);
 	}
 }
-
+//<32,32,1>-<8,8,1>   <256,256,1>
 [numthreads(8, 8, 1)]
 void HorizontalStepInverseFFT(uint3 id : SV_DispatchThreadID)
 {
-	float4 data = PrecomputedData[uint2(Step, id.x)];
+	float4 data = PrecomputedData[uint2(Step, id.x)];		//pre data <8,256> step:0,1,2,3,4,5,6,7  id.x 0-255
 	uint2 inputsIndices = (uint2)data.ba;
 	if (PingPong)
 	{
@@ -104,12 +103,6 @@ void VerticalStepInverseFFT(uint3 id : SV_DispatchThreadID)
 		Buffer0[id.xy] = Buffer1[uint2(id.x, inputsIndices.x)]
 			+ ComplexMult(float2(data.r, -data.g), Buffer1[uint2(id.x, inputsIndices.y)]);
 	}
-}
-
-[numthreads(8, 8, 1)]
-void Scale(uint3 id : SV_DispatchThreadID)
-{
-	Buffer0[id.xy] = Buffer0[id.xy] / Size / Size;
 }
 
 [numthreads(8, 8, 1)]
