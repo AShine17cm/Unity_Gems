@@ -1,3 +1,9 @@
+h( X, t ) = A cos(K^T X - w t )
+X=( x, z ) 	 	K=(k_x, k_z)  波的移动方向
+波数 wavenumber 	k= || K ||
+
+
+
 FFT		频域模拟
 inverse FFT	转换到 空间/Space
 结果		R , G, B = Dx, Dy, Dz
@@ -23,7 +29,12 @@ Jacobian 小于 0	重叠区域	Overlap	( Folding Map )
 先做 一阶偏导，再求 行列式   指标意义：体积变化率
 可转 特征向量
 
-Mesh		顶点距离 cm
+Mesh		顶点距离 cm     dx点距
+nyquist-shannon 	采样定理	最小波长=2 dx,  最大波长(对角线)=sqrt( 2 ) dx N/2
+波数		最小波数:  2 Pi/最小波长	最大波数: 2 Pi/最大波长
+
+Grid		wave-vector K	d k_x =2 Pi / size
+
 
 速度的平方/加速度   米
 

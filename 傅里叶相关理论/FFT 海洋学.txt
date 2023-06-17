@@ -1,0 +1,38 @@
+Oceanographic	海洋学 
+sin 波	波长 / 频率 / 相位   不同方形的 超级线性叠加
+波普	不同 频率/波长	的能量分布
+波普	静态的，根据 风速，海岸距离
+波普	一个波普确定一个海洋
+
+涌浪 Swell		波 流出了它们的产生区域
+应力波 capillary   ultra-gravity   gravity    infra-gravity     长周期: 风暴，地震    潮汐 太阳，月亮
+打断因素	风
+还原因素	表面张力    科氏力 coriolis	重力
+
+打断因素		产生 位置的displace
+还原因素		还原 位置
+
+线性波理论	深度一致，波的振幅 和 水体大小无关
+
+h( x,t ) = A 振幅   cos( k x - 角速度 w t )
+波数 wave number		k= 2 Pi/波长     
+角速度 	2 Pi 频率
+
+波数 角速度 不独立，通过 dispersion relation 耦合
+
+顶峰 crest	槽trough
+
+相位速度 phase speed 	波长/周期     或者      角速度/波数
+相位速度 phase pseed 	有可能周期一样，但是波长不一样
+散布 dispersion	不同波长的波，以不同的相位速度 移动
+散布 关系 dispersion relation	 角速度的平方 = 重力 波数 双曲正切( 波数 水深 )
+			ang^2  = g k tanh( k d )
+浅水 散布		水深 << 波长  tanh( k d ) 近似于  kd
+深水 散布		水深 >> 波长  kd >>1    tanh(kd) 近似于 1
+假定 浅水没有 散布
+假定 深水有 散布， 但是和深度无关
+
+双曲正切   e^x - e^(-x) / e^x +e^(-x)
+
+
+
