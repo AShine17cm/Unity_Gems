@@ -7,13 +7,21 @@ Cascades		频率 分成4部分	在频域 模拟4个, 然后转 空间, 混合( �
 
 海水的反射	高度的 lope 函数
 Choppy Waves	不连贯的海水	(时间： 尖峰，圆峰，消失)
-		elevation 升高   v-potential
+		底部平坦，顶部尖锐
+		正相关:  高度 elevation  动能 v-potential
+Lie Transform	将 < 高度 动能 > 转换为 动态场
 		利用 overlap 区域
 
-Jacobian       x -> x+k D(x,t)
+Displace 场	高度场数据 (信号 k,时间 t) * Exp( i 信号k 位置 x)  ( k/K  )
+点的位置( 震动 )		x + 常系数 Displace 场( x, t)
+
+
+Jacobian  行列式	
+Jacobian = Jxx Jyy  -  Jxy Jyx 
 Displacement 是 0， Jacobian 是 1
-否则   Jacobian = Jxx Jyy  -  Jxy Jyx 
+Jacobian 小于 0	重叠区域	Overlap	( Folding Map )
 先做 一阶偏导，再求 行列式   指标意义：体积变化率
+可转 特征向量
 
 Mesh		顶点距离 cm
 
