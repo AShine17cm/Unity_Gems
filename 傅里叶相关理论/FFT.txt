@@ -1,0 +1,6 @@
+FFT		频域模拟
+inverse FFT	转换到 空间/Space
+结果		R , G, B = Dx, Dy, Dz
+
+Cascades		频率 分成4部分	在频域 模拟4个, 然后转 空间, 混合( 基于距离 )
+泡沫		jacobian flat->dispalced	波峰挤压  <0
