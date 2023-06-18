@@ -1,0 +1,23 @@
+jonswap 谱	随机海洋的 组成频率
+
+displacement	worldUV 采样
+		采样值变换到 Local, 对顶点进行 变形
+
+screen UV		采样 场景深度+海平面深度
+world UV		采样 Foam
+
+-------------------------------------------------------------------------------------
+
+
+WavesData	xz平面  每一点
+		x: wave-vector  z: wave-vector    y: 振幅   w:频率
+H0K		xz 平面，每一点
+		噪音[x,z] * jonswap 谱
+H0		xz 平面，每一点
+		初始波，xy	初始波的 xy转置( 256-x, y-256 )   zw
+
+
+相位 phase	w: 频率 * 时间
+指数 exponent	cos-phase, sin-phase
+H函数		H0[x,y] * exponent
+Dx_Dz		

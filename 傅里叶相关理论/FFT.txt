@@ -2,14 +2,11 @@ h( X, t ) = A cos(K^T X - w t )
 X=( x, z ) 	 	K=(k_x, k_z)  波的移动方向
 波数 wavenumber 	k= || K ||
 
-
-
 FFT		频域模拟
 inverse FFT	转换到 空间/Space
 结果		R , G, B = Dx, Dy, Dz
 
 Cascades		频率 分成4部分	在频域 模拟4个, 然后转 空间, 混合( 基于距离 )
-泡沫		jacobian flat->dispalced	波峰挤压  <0
 
 海水的反射	高度的 lope 函数
 Choppy Waves	不连贯的海水	(时间： 尖峰，圆峰，消失)
@@ -21,7 +18,7 @@ Lie Transform	将 < 高度 动能 > 转换为 动态场
 Displace 场	高度场数据 (信号 k,时间 t) * Exp( i 信号k 位置 x)  ( k/K  )
 点的位置( 震动 )		x + 常系数 Displace 场( x, t)
 
-
+泡沫
 Jacobian  行列式	
 Jacobian = Jxx Jyy  -  Jxy Jyx 
 Displacement 是 0， Jacobian 是 1

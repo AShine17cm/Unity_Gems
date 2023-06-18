@@ -152,7 +152,7 @@
 				tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x +
 				tex2D(_Turbulence_c1, IN.worldUV / LengthScale1).x +
 				tex2D(_Turbulence_c2, IN.worldUV / LengthScale2).x;
-			jacobian = min(1, max(0, (-jacobian + _FoamBiasLOD2) * _FoamScale));
+			jacobian = min(1, max(0, (-jacobian + _FoamBiasLOD2) * _FoamScale));//泡沫区域, 偏移，缩放
 			#elif defined(MID)
 			jacobian =
 				tex2D(_Turbulence_c0, IN.worldUV / LengthScale0).x +
@@ -166,7 +166,7 @@
 
 			float2 screenUV = IN.screenPos.xy;
 			if (IN.screenPos.w != 0)screenUV /= IN.screenPos.w;
-
+			//视线的 深度差
 			float backgroundDepth =	LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, screenUV));
 			float surfaceDepth = UNITY_Z_0_FAR_FROM_CLIPSPACE(IN.screenPos.z);
 			float depthDifference = max(0, backgroundDepth - surfaceDepth - 0.1);
