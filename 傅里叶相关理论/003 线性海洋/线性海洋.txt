@@ -1,0 +1,14 @@
+k	wave-number	 2 Pi/ 波长		
+w	wave-frequency	2 Pi * f		波的角速度
+	| k | 相同， w 相同
+
+phase-velocity		波形的一段（波峰），位移的速度
+			波长 / 周期
+
+dispersion-relation		w(k)的平方=  g k     单位: 2 Pi/ 秒的平方
+			以不同 相位速度 移动的 不同波长的 wave
+
+
+振幅谱 模型 负责在 w,k之间建立连接
+
+

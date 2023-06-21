@@ -1,0 +1,10 @@
+风速越大	能量谱向 低频移动
+Fetch-limited wave growth	风速垂直 吹向 海岸线
+
+Jonswap 谱   一维的谱	Pierson 谱 + Peak 加强因子
+距离海岸越近	能量分布在高频
+
+Directional spreading 函数	弥补一维能量谱 的方向信息
+Directional spreading 函数	将能量谱 按不同方向扩散
+
+	每个w的能量不变， 相位会变?

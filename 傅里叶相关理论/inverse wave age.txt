@@ -1,0 +1,8 @@
+inverse wave age
+
+风速 / 相位速度	无量纲单位
+
+下限  	0.82	一个完全演化状态的海洋 	a fully developed sea
+上限        4 或者 5	近岸
+
+小于 1 说明 相位速度大于 风速

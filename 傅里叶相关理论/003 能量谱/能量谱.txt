@@ -1,0 +1,4 @@
+振幅 谱	振幅谱的平方 通过 	 p密度 g 重力   与能量谱建立关联
+	p密度 g重力	量纲
+
+一维energy spectrum	frequency spectrum 频率谱

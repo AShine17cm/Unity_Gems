@@ -1,0 +1,12 @@
+a wave spectrum	风速，重力
+1.static		风速，海岸距离
+2.compact model	少量参数
+
+fetch	风吹的距离
+水深	波普模型，需要这个参数 ？
+
+Pierson-Moskowitz 谱	波数 wave-number  映射 wave的能量	没有方向信息 wave-vector
+directional-spreading	方向扩散 wave-vector
+			peak 与风向对齐
+
+Jonswap 谱
