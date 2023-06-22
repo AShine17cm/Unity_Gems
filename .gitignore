@@ -1,11 +1,11 @@
 Compute/Library
 FFT_Ocean/Library
-URP/Library
+SRP/Library
 Waters/Library
 Compute/Logs
 FFT_Ocean/Logs
-URP/Logs
+SRP/Logs
 Waters/Logs
 FFT_Ocean/Temp
-URP/Temp
+SRP/Temp
 FFT_Ocean/obj
