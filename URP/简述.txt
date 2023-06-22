@@ -1,0 +1,25 @@
+URP Asset		只是一个让 Unity 可以获取 Pipeline 实例的手段
+		一个 handle 和存储设置的地方
+URP Asset		创建自定义的 RenderPipeline
+
+ScriptableRenderContext
+
+VP矩阵		根据 Camera设定
+剔除操作		Cull
+绘制操作		DrawRenders
+天空盒
+
+Gizmos		通过GizmoSubset 选择类别
+Editor视口		绘制UI, 静态方法 EmitWorldGeometryForSceneView
+
+拷贝指令		ExecuteCommandBuffer
+提交
+
+Command Buffer
+BeginSample / EndSample
+清空 RenderTarget
+
+
+2019 版本
+UI 如果是 Screen-Space-Overlay 就不会用 SRP渲染
+UI 如果是 Screen-Space-Cameara 就会成为 SRP下透明物体的一类
