@@ -1,0 +1,25 @@
+AnimationPlayableAsset 选项 可以不 Play Editor 观看效果
+
+Flow map		Curl Noise,  Noise Derivatives
+Flow map		去掉  sRGB 选项
+
+取 UV 上的梯度向量	叠加时间函数，应用到 纹理UV上
+
+
+淡入淡出	1	增加一个权重通道 w
+时间噪音		使用低频噪音 应用到 time 上
+
+淡入淡出	2	混合 2个 flow-vector
+相位偏移		周期的一半
+
+增大周期	1	Jump
+time-progress	为 周期数/整数，每个周期在贴图上 偏移一小块
+
+问题: 	出现块状， 纹理压缩造成的
+
+
+[NoScaleOffset] 	去掉 uv的框框
+CG	对同一个纹理采样2次，shader编译器会优化为一个采样
+HeightMap	法线 = cross( u向的高度差，v向的高度差)
+Derivative Map	Dx:A   Dy:G   H(高度):B  
+		计算更简单，不需要开平方

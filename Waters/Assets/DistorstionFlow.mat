@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DistorstionFlow
+  m_Shader: {fileID: 4800000, guid: 57d4674d8e3125b4192a0dbf8542d0d6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DerivHeightMap:
+        m_Texture: {fileID: 2800000, guid: ab5712ae2c6f82b4184ae23f65ef7aed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: 4a51e6bd20ee8ba4c9a2d4de9b9f71c2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 39ffd7c95f4186d44972042425500a2a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: c06f0506db9984241901da9db307140b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _FlowStrength: 0.1
+    - _Glossiness: 0.7
+    - _HeightScale: 0.1
+    - _HeightScaleModulated: 9
+    - _Metallic: 0
+    - _Speed: 0.5
+    - _Tiling: 3
+    - _UJump: 0.25
+    - _VJump: 0.25
+    m_Colors:
+    - _Color: {r: 0.36725703, g: 0.44117603, b: 0.5943396, a: 1}
+  m_BuildTextureStacks: []
