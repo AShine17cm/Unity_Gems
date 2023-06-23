@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Mg RP/Mg URP.unity
+- path: Assets/Mg RP/DrawCall.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

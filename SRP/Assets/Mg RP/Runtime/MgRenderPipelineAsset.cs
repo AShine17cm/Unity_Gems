@@ -6,9 +6,11 @@ using UnityEngine.Rendering;
 [CreateAssetMenu(menuName = "Rendering/Mg Render Pipeline")]
 public class MgRenderPipelineAsset : RenderPipelineAsset
 {
+    [SerializeField]
+    bool useDynamicBatching = true, useGPUInstancing = true, useSRPBatcher = true;
     protected override RenderPipeline CreatePipeline()
     {
-        return new MgRenderPipeline();
+        return new MgRenderPipeline(useDynamicBatching,useGPUInstancing,useSRPBatcher);
     }
 
 

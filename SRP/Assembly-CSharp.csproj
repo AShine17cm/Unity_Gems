@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9A804367-AED6-4247-22D0-E98551483E44}</ProjectGuid>
+    <ProjectGuid>{5F4060FF-6CFE-ED1D-CE1A-5AB911DAAF3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,18 +57,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GlitchRenderFeature.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\CameraRender.Editor.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\CameraRender.cs" />
     <Compile Include="Assets\MyRenderPipeline.cs" />
-    <Compile Include="Assets\MyPipelineAsset.cs" />
     <Compile Include="Assets\Mg RP\Runtime\MgRenderPipelineAsset.cs" />
     <Compile Include="Assets\Mg RP\Runtime\MgRenderPipeline.cs" />
-    <Compile Include="Assets\Mg RP\Runtime\CameraRender.cs" />
-    <Compile Include="Assets\Mg RP\Runtime\CameraRender.Editor.cs" />
+    <Compile Include="Assets\MyPipelineAsset.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\PerObjectMaterialProperties.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\MeshBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OutlineGlicth.shader" />
     <None Include="Assets\Tint.shader" />
     <None Include="Assets\Blit_Glitch.shader" />
+    <None Include="Assets\Mg RP\Shaders\UnlitPass.hlsl" />
+    <None Include="Assets\Mg RP\ShaderLibrary\Common.hlsl" />
+    <None Include="Assets\Mg RP\ShaderLibrary\UnityInput.hlsl" />
     <None Include="Assets\Outline.shader" />
+    <None Include="Assets\Mg RP\Shaders\Unlit.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

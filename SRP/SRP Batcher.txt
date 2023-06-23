@@ -1,0 +1,18 @@
+SRP Bacther	将相同Shader, 差异化的Material 合批 
+SRP Batcher 开启	GraphicsSettings.useScriptableRenderPipelineBatching
+OpenGL ES 2.0以上		cbuffer
+
+在 GPU	缓存材质数据
+UnityPerMaterial		材质级别的 常量缓冲区
+UnityPerDraw		物体级别的
+
+Shader	的 Inspector 面板	可查看 材质属性在哪个 CBuffer
+
+通过Frame Debug 查看 SRP Batcher的效果
+
+
+MonoBehaviour		MaterialPropertyBlock	可以多个 Render共享
+SRP Bacther		无法识别 MaterialPropertyBlock
+
+GPU Instancing		只能合批相同的Material
+GPU Instancing		关闭，设备不支持， 相关物件不会被渲染

@@ -12,7 +12,8 @@ public partial class CameraRender
     CommandBuffer buffer = new CommandBuffer { name = bufferName };
     CullingResults cullingResults;
     //partial void DrawUnsupportedShadersX();//声明一个存在于 partial 类中的函数
-    public void Render(ScriptableRenderContext context,Camera camera)
+    public void Render(ScriptableRenderContext context,Camera camera,
+        bool useDynamicBatching,bool useGPUInstancing)
     {
         this.context = context;
         this.camera = camera;
@@ -20,7 +21,7 @@ public partial class CameraRender
         PrepareForSceneWindow();    //在Cull 之前画UI
         if (!Cull()) return;
         Setup();
-        DrawVisibleGeometry();      //srp shader
+        DrawVisibleGeometry(useDynamicBatching,useGPUInstancing);      //srp shader
         //partial 声明的方法
         DrawUnsupportedShaders();   //旧管线资源
         DrawGizmos();
@@ -38,16 +39,21 @@ public partial class CameraRender
         buffer.BeginSample(bufferName);         //用于 Profiler 和 Frame-Debugger
         ExecuteBuffer();
     }
-    void DrawVisibleGeometry()
+    void DrawVisibleGeometry(bool useDynamicBatching,bool useGPUInstancing)
     {
         //排序
         var sorttingSettings = new SortingSettings(camera);
         sorttingSettings.criteria = SortingCriteria.CommonOpaque;
 
         //shader tags
-        var drawingSettings = new DrawingSettings(
+        var drawingSettings = new DrawingSettings
+            (
             unlitShaderTagId, sorttingSettings
-            );
+            )
+        {
+            enableDynamicBatching = useDynamicBatching,         //动态合批
+            enableInstancing = useGPUInstancing                 //实例化
+        };
         //queue 范围
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
         //filteringSettings.renderQueueRange = RenderQueueRange.opaque;  不能这么写
