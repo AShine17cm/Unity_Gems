@@ -5,22 +5,26 @@ using UnityEngine.Rendering;
 public partial class CameraRender
 {
     const string bufferName = "Mg: Render Camera";
-    static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
+    static ShaderTagId 
+        unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
+        litShaderTagId=new ShaderTagId("MgLit");
 
     ScriptableRenderContext context;    //provides a connection to the native engine
     Camera camera;
     CommandBuffer buffer = new CommandBuffer { name = bufferName };
+    Lighting lighting = new Lighting();
     CullingResults cullingResults;
-    //partial void DrawUnsupportedShadersX();//声明一个存在于 partial 类中的函数
+
     public void Render(ScriptableRenderContext context,Camera camera,
         bool useDynamicBatching,bool useGPUInstancing)
     {
         this.context = context;
         this.camera = camera;
-        PrepareBuffer();            //使得 command-buffer 的名字和camera一致
-        PrepareForSceneWindow();    //在Cull 之前画UI
+        PrepareBuffer();            //Editor: 使得 command-buffer 的名字和camera一致
+        PrepareForSceneWindow();    //Editor: 在Cull 之前画UI
         if (!Cull()) return;
-        Setup();
+        Setup();                    //VP 矩阵, Clear Target
+        lighting.Setup(context,cullingResults);    //通过 CommandBuffer 设置灯光数据 
         DrawVisibleGeometry(useDynamicBatching,useGPUInstancing);      //srp shader
         //partial 声明的方法
         DrawUnsupportedShaders();   //旧管线资源
@@ -54,6 +58,7 @@ public partial class CameraRender
             enableDynamicBatching = useDynamicBatching,         //动态合批
             enableInstancing = useGPUInstancing                 //实例化
         };
+        drawingSettings.SetShaderPassName(1, litShaderTagId);
         //queue 范围
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
         //filteringSettings.renderQueueRange = RenderQueueRange.opaque;  不能这么写

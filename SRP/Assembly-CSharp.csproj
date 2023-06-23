@@ -59,21 +59,28 @@
     <Compile Include="Assets\GlitchRenderFeature.cs" />
     <Compile Include="Assets\Mg RP\Runtime\CameraRender.Editor.cs" />
     <Compile Include="Assets\Mg RP\Runtime\CameraRender.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\PerObjectMaterialProperties.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\MeshBall.cs" />
     <Compile Include="Assets\MyRenderPipeline.cs" />
     <Compile Include="Assets\Mg RP\Runtime\MgRenderPipelineAsset.cs" />
     <Compile Include="Assets\Mg RP\Runtime\MgRenderPipeline.cs" />
     <Compile Include="Assets\MyPipelineAsset.cs" />
-    <Compile Include="Assets\Mg RP\Runtime\PerObjectMaterialProperties.cs" />
-    <Compile Include="Assets\Mg RP\Runtime\MeshBall.cs" />
+    <Compile Include="Assets\Mg RP\Runtime\Lighting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OutlineGlicth.shader" />
+    <None Include="Assets\Mg RP\ShaderLibrary\Light.hlsl" />
+    <None Include="Assets\Mg RP\Shaders\Lit.shader" />
     <None Include="Assets\Tint.shader" />
     <None Include="Assets\Blit_Glitch.shader" />
     <None Include="Assets\Mg RP\Shaders\UnlitPass.hlsl" />
+    <None Include="Assets\Mg RP\ShaderLibrary\Lighting.hlsl" />
     <None Include="Assets\Mg RP\ShaderLibrary\Common.hlsl" />
+    <None Include="Assets\Mg RP\ShaderLibrary\Surface.hlsl" />
     <None Include="Assets\Mg RP\ShaderLibrary\UnityInput.hlsl" />
+    <None Include="Assets\Mg RP\Shaders\LitPass.hlsl" />
     <None Include="Assets\Outline.shader" />
+    <None Include="Assets\Mg RP\ShaderLibrary\BRDF.hlsl" />
     <None Include="Assets\Mg RP\Shaders\Unlit.shader" />
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ public class MgRenderPipeline : RenderPipeline
         this.useGPUInstancing = useGPUInstancing;
 
         GraphicsSettings.useScriptableRenderPipelineBatching = useSRPBatcher;    //¿ªÆô SRP Batcher
+        GraphicsSettings.lightsUseLinearIntensity = true;
     }
     protected override void Render(ScriptableRenderContext context, Camera[] cameras)
     {

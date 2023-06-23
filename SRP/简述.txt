@@ -19,7 +19,13 @@ Command Buffer
 BeginSample / EndSample
 清空 RenderTarget
 
+CullingResults	visibleLights		颜色，矩阵，类型
+CullingResults	visibleOffscreenVertexLights
+CullingResults	visibleReflectionProbes	反射探针，矩阵，纹理
 
 2019 版本
 UI 如果是 Screen-Space-Overlay 就不会用 SRP渲染
 UI 如果是 Screen-Space-Cameara 就会成为 SRP下透明物体的一类
+OpenGL ES 2.0 不支持 linear 光照
+
+CustomEditor "MgShaderGUI"		继承于 ShaderGUI
