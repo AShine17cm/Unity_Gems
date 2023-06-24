@@ -6,8 +6,16 @@ public class MgRenderPipeline : RenderPipeline
 {
     CameraRender renderer = new CameraRender();// first-person, 3D-Map,forward,deferred
     bool useDynamicBatching, useGPUInstancing;
-    public MgRenderPipeline(bool useDynamicBatching, bool useGPUInstancing, bool useSRPBatcher)
+
+    PostFXSettings postFXSettings;
+
+    public MgRenderPipeline(
+        bool useDynamicBatching, 
+        bool useGPUInstancing, 
+        bool useSRPBatcher,
+        PostFXSettings postFXSettings)
     {
+        this.postFXSettings = postFXSettings;
         this.useDynamicBatching = useDynamicBatching;
         this.useGPUInstancing = useGPUInstancing;
 
@@ -18,7 +26,10 @@ public class MgRenderPipeline : RenderPipeline
     {
         foreach(Camera camera in cameras)
         {
-            renderer.Render(context, camera,useDynamicBatching,useGPUInstancing);
+            renderer.Render(context, camera,
+                useDynamicBatching,
+                useGPUInstancing,
+                postFXSettings);
         }
     }
 

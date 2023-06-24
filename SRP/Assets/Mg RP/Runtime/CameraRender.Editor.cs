@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.Rendering;
 public partial class CameraRender
 {
-    partial void DrawGizmos();
+    partial void DrawGizmosBeforeFX();
+    partial void DrawGizmosAfterFX();
     partial void DrawUnsupportedShaders();
     partial void PrepareForSceneWindow();       //在 Scene视口画 UI
     partial void PrepareBuffer();               //使得 command-buffer 的名字和camera一致
@@ -49,14 +50,22 @@ public partial class CameraRender
         context.DrawRenderers(cullingResults, ref drawigSettings, ref filteringSettings);
 
     }
-    partial void DrawGizmos()
+    partial void DrawGizmosBeforeFX()
     {
         if (Handles.ShouldRenderGizmos())
         {
             context.DrawGizmos(camera, GizmoSubset.PreImageEffects);
+            //context.DrawGizmos(camera, GizmoSubset.PostImageEffects);
+        }
+    }
+    partial void DrawGizmosAfterFX()
+    {
+        if (Handles.ShouldRenderGizmos())
+        {
             context.DrawGizmos(camera, GizmoSubset.PostImageEffects);
         }
     }
+    
     //画 UI
     partial void PrepareForSceneWindow()
     {

@@ -8,9 +8,16 @@ public class MgRenderPipelineAsset : RenderPipelineAsset
 {
     [SerializeField]
     bool useDynamicBatching = true, useGPUInstancing = true, useSRPBatcher = true;
+    [SerializeField]
+    PostFXSettings postFXSettings = default;
+
     protected override RenderPipeline CreatePipeline()
     {
-        return new MgRenderPipeline(useDynamicBatching,useGPUInstancing,useSRPBatcher);
+        return new MgRenderPipeline(
+            useDynamicBatching,
+            useGPUInstancing,
+            useSRPBatcher,
+            postFXSettings);
     }
 
 

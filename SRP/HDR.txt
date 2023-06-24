@@ -1,0 +1,19 @@
+线性空间	读写Buffer时，GPU 自动在两个颜色空间转换
+显示器	渲染结束，呈现时，假定数据是 sRGB
+
+HDR Buffer		值大于1
+HDR Reflection Probes	
+HDR Camera		指示 是否兼容 HDR 渲染
+HDR Render Textures	只有后处理，延迟渲染，才有意义，因为最终输出Buffer是 sRGB
+
+FrameDebug		HDR 被当做 sRGB处理，会显得过暗
+
+Bloom			HDR/LDR 的区别 可能很大，也可能很小，取决于场景的亮度
+Bloom			threshold 设为1， 这样就只会有 HDR 颜色做出贡献
+
+缺陷	Firefly		像素级区域，在移动时的闪烁
+缺陷	Firefly		解决办法，更大的预过滤区域
+缺陷	Firefly		采样权重，1/(Brightness+1)
+缺陷	Firefly		正常 bright求和，除以样本数，最后>再除以权重数的和
+
+Scattering Bloom		黑夜中的灯笼，不对称的星状光芒，带色调偏移

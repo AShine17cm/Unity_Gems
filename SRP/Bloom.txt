@@ -1,0 +1,15 @@
+
+
+CameraRender.Setup	获取，设定 目标帧
+CommandBuffer.GetTemporary	_CameraFrameBuffer	frameBufferId
+CommandBuffer.SetRenderTarget	_CameraFrameBuffer	frameBufferId
+
+Post FX Stack.Render	获取 CameraRender的目标帧，作为输入
+CommandBuffer.SetGlobalTexture	_PostFXSource		_CameraFrameBuffer
+CommandBuffer.SetRenderTarget	BuiltinRenderTextureType.CameraTarget
+CommandBuffer.DrawProcedural	material			pass-index
+
+将 blur 分成水平和垂直两个方形
+先做Horizon,  Horizon成为 source, 再做Vertical ( 此时vertical的步长应为 horizon的一半 )
+
+

@@ -13,5 +13,5 @@ float4x4 unity_MatrixV;
 float4x4 glstate_matrix_projection;
 
 float3 _WorldSpaceCameraPos;
-
+float4 _ProjectionParams;			//UV 的 V 上下翻转，和图形API有关
 #endif

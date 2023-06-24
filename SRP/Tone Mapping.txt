@@ -1,0 +1,24 @@
+颜色如何被观察	相对亮部，眼睛对暗色调 更敏感
+
+HDR 转换 LDR	就是 Tone-Mapping		多种实现方式
+
+Bloom 之后 ?
+
+Tone-Mapping 和 Bloom		混合在一个Pass中	URP，HDRP
+
+Reinhard		1/(1+c)		可以先做 clamp, 再做 Reinhard
+Reinhard		white-point	无限大
+Reinhard		c  (1+c/w^2) / ( 1+c )	调整white-point
+
+Neutral		t(c e/ w)		c: 颜色通道  e: 指数偏移  w: white-point
+Neutral		x ( ax+cb)+de
+Neutral		x ( ax+b)+df	-e/f
+
+ACES		 Academy Color Encoding System, 美国电影电视协会 ？
+ACES		增加了亮部的色调偏移，使之趋向白色
+ACES		减弱暗部，增强了对比度
+
+Metal API	 有时 shader编译有误， 即使显式的使用了 float, 也会用 half
+
+
+URP / HDRP	用的是 Neutral 的一个变体  还有 ACES
