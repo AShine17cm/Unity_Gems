@@ -1,0 +1,449 @@
+Using pre-set license
+Built from '2020.3/china_unity/release' branch; Version is '2020.3.39f1c1 (e8bb58ac2c1a) revision 15252312'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'zh' Physical Memory: 16318 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.39f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Unity_Gems/SSS
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64119
+Successfully changed project path to: E:/Unity_Gems/SSS
+E:/Unity_Gems/SSS
+Using Asset Import Pipeline V2.
+AS: AutoStreaming module initializing.Refreshing native plugins compatible for Editor in 26.97 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.39f1c1 (e8bb58ac2c1a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.39f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Unity_Gems/SSS/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f82)
+    Vendor:   
+    VRAM:     3949 MB
+    Driver:   31.0.15.3598
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.39f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.39f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.39f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.39f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001319 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 27.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.478 seconds
+Domain Reload Profiling:
+	ReloadAssembly (478ms)
+		BeginReloadAssembly (52ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (367ms)
+			LoadAssemblies (50ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (119ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (136ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (27ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (67ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001456 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.834 seconds
+Domain Reload Profiling:
+	ReloadAssembly (835ms)
+		BeginReloadAssembly (125ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (660ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (217ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (264ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (1ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1529 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 71.3 MB.
+System memory in use after: 71.4 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1967.
+Total: 2.074300 ms (FindLiveObjects: 0.110400 ms CreateObjectMapping: 0.044300 ms MarkObjects: 1.851900 ms  DeleteObjects: 0.066700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl 1 Variant.prefab
+  artifactKey: Guid(9f27ffd01c04b384ba10ed2c7254aeed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl 1 Variant.prefab using Guid(9f27ffd01c04b384ba10ed2c7254aeed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae7b1a9a25b20a0dc01b38e2f541cd5b') in 0.780586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl
+  artifactKey: Guid(343f951ed9ac1074383cb727ee259357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl using Guid(343f951ed9ac1074383cb727ee259357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f5f1040d7c58ac54ad06078603849ca') in 0.006886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/_DLNK/Characters
+  artifactKey: Guid(6061c22d0658bd642aba023ba58c8b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters using Guid(6061c22d0658bd642aba023ba58c8b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00b31d4b94b6344a30a7dac538f33434') in 0.006586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/[Prefabs]
+  artifactKey: Guid(3436dc4056e010b45a1de47c3934ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/[Prefabs] using Guid(3436dc4056e010b45a1de47c3934ed02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4dbbc0b7406af4b5abd754900503720') in 0.006501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.756694 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl.prefab
+  artifactKey: Guid(28fce92923d67c2449f9c3d295c70aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl.prefab using Guid(28fce92923d67c2449f9c3d295c70aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d1228aac4fd05821e4befe5036d71c') in 0.081467 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.974447 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl 2 Variant.prefab
+  artifactKey: Guid(194ffd0653835f54ebd7c74ba6eaaed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/[Prefabs]/DemonGirl 2 Variant.prefab using Guid(194ffd0653835f54ebd7c74ba6eaaed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '958b5a2eaf0473e2986275af5a8b3daa') in 0.067091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.144972 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Demoscene
+  artifactKey: Guid(d1df84e2d9a717c4590a6de849bb3df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Demoscene using Guid(d1df84e2d9a717c4590a6de849bb3df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f00d4483fe85f3505a3b36ce007511') in 0.006744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.705331 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Demoscene/Source
+  artifactKey: Guid(cd04af427d3b84c4086ca5d4e4cf7849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Demoscene/Source using Guid(cd04af427d3b84c4086ca5d4e4cf7849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e99c3a21506582dea225a7870aa8353') in 0.006479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.086113 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Demoscene/DemoDemon
+  artifactKey: Guid(8ceaef4272f38444d823ea58e5fc99ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Demoscene/DemoDemon using Guid(8ceaef4272f38444d823ea58e5fc99ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a4dc3ad08539473ece3885adae57782') in 0.006593 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.134547 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Source
+  artifactKey: Guid(89ec4114c24a5e042884700efd5655a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Source using Guid(89ec4114c24a5e042884700efd5655a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5163eba020cd6a71d47e9d17464f3c9') in 0.001254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.636694 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Source/Mesh
+  artifactKey: Guid(f14cb424981ee104da3bad38bfe388f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Source/Mesh using Guid(f14cb424981ee104da3bad38bfe388f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '472827bbbb3606e66c41432b5d6f02ff') in 0.006815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.012659 seconds.
+  path: Assets/_DLNK/Characters/Demon Girl/Source/Mesh/DemonGirlMesh.FBX
+  artifactKey: Guid(d3b617d4c5387004fa355973611faee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/Characters/Demon Girl/Source/Mesh/DemonGirlMesh.FBX using Guid(d3b617d4c5387004fa355973611faee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '741033e759660d9ebab3394049e59e3e') in 0.265630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9006.777204 seconds.
+  path: Assets/Serah Fei Bikini/textures
+  artifactKey: Guid(0d27e01781d78e44da47c15d8fec234c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/textures using Guid(0d27e01781d78e44da47c15d8fec234c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05fd1b4bd143feee008e700dc69454d9') in 0.035219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.812024 seconds.
+  path: Assets/Serah Fei Bikini/README-HowToInstall.pdf
+  artifactKey: Guid(ff5b8e4aebae2d44dade37ef1e8b0503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/README-HowToInstall.pdf using Guid(ff5b8e4aebae2d44dade37ef1e8b0503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bde6c92f7860c8ad73607a55b8aba5bc') in 0.152159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.581551 seconds.
+  path: Assets/Serah Fei Bikini/Serah Fei Bikini.unity
+  artifactKey: Guid(2501e0ab7592eef4dbe6218bb7d08ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Serah Fei Bikini.unity using Guid(2501e0ab7592eef4dbe6218bb7d08ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db305a5499487a64436aff75b2ef0cfd') in 0.007624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.568821 seconds.
+  path: Assets/Serah Fei Bikini/serahreikkahairv1B.FBX
+  artifactKey: Guid(84a85db59fbd6f14b878c609124c7408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/serahreikkahairv1B.FBX using Guid(84a85db59fbd6f14b878c609124c7408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975c79dc40b89ed4bc3a5358c6981862') in 0.308093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.638534 seconds.
+  path: Assets/Serah Fei Bikini/Sf-Bikini
+  artifactKey: Guid(66eb9b98229c584419eea5c960424329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Sf-Bikini using Guid(66eb9b98229c584419eea5c960424329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae254ed79e57e9f5e184630ca378b9ef') in 0.006528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.473978 seconds.
+  path: Assets/Serah Fei Bikini/Sf-Bikini/materials
+  artifactKey: Guid(8292b70674567624686ccc079c5c10c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Sf-Bikini/materials using Guid(8292b70674567624686ccc079c5c10c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f899d6a92385ab7c283c8cc9ae1bdea') in 0.006573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.446006 seconds.
+  path: Assets/Serah Fei Bikini/Sf-Bikini/sf-BikiniBottom_Metallic.png
+  artifactKey: Guid(f944a2ed5977fc247a84dba30e0da849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Sf-Bikini/sf-BikiniBottom_Metallic.png using Guid(f944a2ed5977fc247a84dba30e0da849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0e42fa052c11a073f9e05dae2d3659') in 0.084432 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.649137 seconds.
+  path: Assets/Serah Fei Bikini/Standalone
+  artifactKey: Guid(16bb2568e29f234478f6a309fd3be97d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Standalone using Guid(16bb2568e29f234478f6a309fd3be97d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f54d46d4167e1397b8bc161e05fa84a') in 0.006956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.169581 seconds.
+  path: Assets/Serah Fei Bikini/Standalone/SerahBikiniv1.FBX
+  artifactKey: Guid(40aaccdb475de0f44a8e96255e846ec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Standalone/SerahBikiniv1.FBX using Guid(40aaccdb475de0f44a8e96255e846ec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd3cb3b8019f409031b7ea8c69c7afe4') in 0.371961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.181153 seconds.
+  path: Assets/_DLNK/_DLNK Source/Source Mesh
+  artifactKey: Guid(0a1acf54e3b07694fbe54c577e3d4b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/_DLNK Source/Source Mesh using Guid(0a1acf54e3b07694fbe54c577e3d4b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf1f4f9921ded19d1d0f87c359155634') in 0.006799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.099366 seconds.
+  path: Assets/_DLNK/_DLNK Source/Source Mesh/SetHemisphere.fbx
+  artifactKey: Guid(a470bc3e9d41c054aabd26a80c0ec26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/_DLNK Source/Source Mesh/SetHemisphere.fbx using Guid(a470bc3e9d41c054aabd26a80c0ec26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '199358b9059164e70d289f62e8123e37') in 0.046677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.376000 seconds.
+  path: Assets/_DLNK/_DLNK Source/Source Mesh/Pedestal_base.fbx
+  artifactKey: Guid(2541662c16911d542bd5cb972a3ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_DLNK/_DLNK Source/Source Mesh/Pedestal_base.fbx using Guid(2541662c16911d542bd5cb972a3ac9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '032371b4a8294a1b3547b849187f69fe') in 0.131309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 72.204044 seconds.
+  path: Assets/Serah Fei Bikini
+  artifactKey: Guid(95f29e9c574205547836d3e88cfb34a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini using Guid(95f29e9c574205547836d3e88cfb34a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c90403b69d8237c63c4ecc07f9def7') in 0.006289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.897312 seconds.
+  path: Assets/Serah Fei Bikini/SSS-plugin-unity.zip
+  artifactKey: Guid(5d0c28290cbff8a44856cffeb0b5443b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/SSS-plugin-unity.zip using Guid(5d0c28290cbff8a44856cffeb0b5443b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36998ea03c4c8c4c8d02889392704736') in 0.010547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1128.123496 seconds.
+  path: Assets/Deamon Gril/_DLNK Source
+  artifactKey: Guid(1f889ff3967995740a75c0e10227ef7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source using Guid(1f889ff3967995740a75c0e10227ef7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e19077f54d144b3e3375ae58b7e2d26') in 0.007029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.166964 seconds.
+  path: Assets/Deamon Gril/_DLNK Source/Source Maps
+  artifactKey: Guid(c8017160605235442a0758423a4c401f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source/Source Maps using Guid(c8017160605235442a0758423a4c401f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f6c6e265ecd73cf6d9c62ee8f918ab0') in 0.006613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.814105 seconds.
+  path: Assets/Deamon Gril/_DLNK Source/Source Maps/LogoDLNK22_nobkg_round.png
+  artifactKey: Guid(f97853bbb5a51c544905fef82fe3b796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source/Source Maps/LogoDLNK22_nobkg_round.png using Guid(f97853bbb5a51c544905fef82fe3b796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4012879f5b400e4efec3b201fa80bdd') in 0.012483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.846997 seconds.
+  path: Assets/Deamon Gril/_DLNK Source/Source Materials
+  artifactKey: Guid(5a8c359ab60dca54e98e6e156cb77e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source/Source Materials using Guid(5a8c359ab60dca54e98e6e156cb77e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c08a222ca83b98f43930434a9c29e0') in 0.006844 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.855290 seconds.
+  path: Assets/Deamon Gril/_DLNK Source/Source Materials/Pedestal00
+  artifactKey: Guid(cc9586c49c4a72c43b4a2b9108f49bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source/Source Materials/Pedestal00 using Guid(cc9586c49c4a72c43b4a2b9108f49bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2af7be2bed1dc3aad8685130098faddb') in 0.006673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.582039 seconds.
+  path: Assets/Deamon Gril/_DLNK Source/Source Prefabs/Pedestal00.prefab
+  artifactKey: Guid(6206902e10f3c7c47a720ef54abfcf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/_DLNK Source/Source Prefabs/Pedestal00.prefab using Guid(6206902e10f3c7c47a720ef54abfcf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b332bd6dcc80920776a602c8e42142e') in 0.037173 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.853825 seconds.
+  path: Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapons
+  artifactKey: Guid(7512464b29b08364c8c12dfd2cbdb76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapons using Guid(7512464b29b08364c8c12dfd2cbdb76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41edbbb605a88f60f8254c303c4f79f2') in 0.007099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.619739 seconds.
+  path: Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapons/Scythe_Demon.prefab
+  artifactKey: Guid(b399cebba5639cb44b0fdc6413e3efda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapons/Scythe_Demon.prefab using Guid(b399cebba5639cb44b0fdc6413e3efda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf90eaf77ada1cf6f8006d00bc5dbc7') in 0.337645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.449441 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_armor_albedo.png
+  artifactKey: Guid(6ba9277cb8064f2458eafb80b306230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_armor_albedo.png using Guid(6ba9277cb8064f2458eafb80b306230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84de95df42f84b52c1d33f978968f51e') in 0.012711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.664764 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_armor_albedo2.png
+  artifactKey: Guid(d5767e6927212bc448b978a65c558c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_armor_albedo2.png using Guid(d5767e6927212bc448b978a65c558c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c584575aef28ceda7a4e5f1622daefaf') in 0.012449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.938877 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo3.tif
+  artifactKey: Guid(34a8fb8b7e7410548a2e21cde514be73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo3.tif using Guid(34a8fb8b7e7410548a2e21cde514be73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46f50324a74870d5b8f64ae90e3ebfc') in 0.020489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.854088 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo2.png
+  artifactKey: Guid(47c65a0f171828247b01d55e178198a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo2.png using Guid(47c65a0f171828247b01d55e178198a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8ed6e89af51b415905204aa22689513') in 0.011335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.409041 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo4.tif
+  artifactKey: Guid(acb01863cfbd7f843b2020d734661246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo4.tif using Guid(acb01863cfbd7f843b2020d734661246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42e337bfac211390d636eb33272c975') in 0.084119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.468183 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo5.tif
+  artifactKey: Guid(11f5bf65914afb947af593250f51f644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo5.tif using Guid(11f5bf65914afb947af593250f51f644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43b6fa98e15b926c8ba7a324ae12975e') in 0.062154 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.597022 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo.png
+  artifactKey: Guid(4e3166b36f6062f429c1cad391ea7a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DemonGirl_body_albedo.png using Guid(4e3166b36f6062f429c1cad391ea7a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '139672ea51629703c14dd8ae25be406b') in 0.036054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.495738 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo.png
+  artifactKey: Guid(be97f63c2f85ed644aecb10c86a4dfcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo.png using Guid(be97f63c2f85ed644aecb10c86a4dfcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffc8d54ebbf86579ddc79225cb2cfd22') in 0.010661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.530848 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo1.png
+  artifactKey: Guid(5a0a2b456d051484897724c4d63ab2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo1.png using Guid(5a0a2b456d051484897724c4d63ab2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '792c570c524634326e83935304fa03e2') in 0.053019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.003584 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo4.png
+  artifactKey: Guid(bc648b206e4619f4a85d7b884644d29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo4.png using Guid(bc648b206e4619f4a85d7b884644d29c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10a61bc6188ea86d8997bf6bfc38979b') in 0.030410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.654060 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo3.png
+  artifactKey: Guid(a428073e19b81c948bce783420ec58c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Maps/dlnk_DGWeapon_albedo3.png using Guid(a428073e19b81c948bce783420ec58c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a7fdff7b887aa337c65f3f6592394ba') in 0.011786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.816005 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Source/Materials/Variant1
+  artifactKey: Guid(42539cac00a30674bb8891c66b632c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Source/Materials/Variant1 using Guid(42539cac00a30674bb8891c66b632c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0d4545fde336223a51134de83a1bafd') in 0.008026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.804096 seconds.
+  path: Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapon Scythe.prefab
+  artifactKey: Guid(b399cebba5639cb44b0fdc6413e3efda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/[Prefabs]/Weapon Scythe.prefab using Guid(b399cebba5639cb44b0fdc6413e3efda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70a1f4434532a80e0062e1c4c3c303ba') in 0.024623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.228131 seconds.
+  path: Assets/Deamon Gril/Demon Girl/Demoscene/DemoDemon.unity
+  artifactKey: Guid(641b2624a17fb4e418110505d936523a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Deamon Gril/Demon Girl/Demoscene/DemoDemon.unity using Guid(641b2624a17fb4e418110505d936523a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c28dba6750f57f6b1f300d0e7b658ea0') in 0.008024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.419466 seconds.
+  path: Assets/Demon Gril/Demon Girl/Source/Motion/demonGirl@attack00.FBX
+  artifactKey: Guid(0f67e29ba34df3c45ac45d70a1c37631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Demon Gril/Demon Girl/Source/Motion/demonGirl@attack00.FBX using Guid(0f67e29ba34df3c45ac45d70a1c37631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55957003dbc07fd7cedd79dc2c7b66b5') in 0.014633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.234627 seconds.
+  path: Assets/Demon Gril/Demon Girl/Source/Motion/Generic
+  artifactKey: Guid(e40c7ef514363e14e9677164abf97426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Demon Gril/Demon Girl/Source/Motion/Generic using Guid(e40c7ef514363e14e9677164abf97426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37c3287d282d96e45795760fe86221a') in 0.006700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 210.438502 seconds.
+  path: Assets/Serah Fei Bikini/materials/hair
+  artifactKey: Guid(3c79d77a304f4c84892aaceae887f797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/materials/hair using Guid(3c79d77a304f4c84892aaceae887f797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f60d2c407975d4241a5eb2173cf195') in 0.007095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.312418 seconds.
+  path: Assets/Serah Fei Bikini/Prefabs/SerahBikini.prefab
+  artifactKey: Guid(987576ea6c44e534d95bd5c51872d50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Serah Fei Bikini/Prefabs/SerahBikini.prefab using Guid(987576ea6c44e534d95bd5c51872d50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d615dadcc97fc22ff2d84f5c67c00bd') in 0.526598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 122.849438 seconds.
+  path: Assets/Girl Bikini/Prefabs/SerahBikinihair.prefab
+  artifactKey: Guid(fb13ca29c3bd72d4d81d28b73f019304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Girl Bikini/Prefabs/SerahBikinihair.prefab using Guid(fb13ca29c3bd72d4d81d28b73f019304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f49fb46c8d688cad3ee3d6b98bb0148') in 0.025601 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

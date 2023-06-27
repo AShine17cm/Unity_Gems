@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/FFT/Test_FT.unity
+- path: Assets/Scenes/FFT_Ocean.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

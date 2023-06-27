@@ -94,7 +94,6 @@ public class WavesCascade
 
     public void CalculateWavesAtTime(float time)
     {
-        // Calculating complex amplitudes
         timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dx_Dz, DxDz);                          //输出
         timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dy_Dxz, DyDxz);                        //输出
         timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dyx_Dyz, DyxDyz);                      //输出

@@ -1,0 +1,44 @@
+调色三阶段
+
+Log 空间		对比度
+HSV 空间		色调偏移
+Linear 空间 ?	滤色
+Linear 空间 ?	饱和度
+LMS 空间		白平衡	色温
+Gamma 空间	Split-Tone	  暗部冷色，亮部暖色
+最后 HDR-LDR
+
+1. Color Correction	compensating 中部 medium ?
+2. Color Grading	想要的效果，非真实？	1和2 合成一个
+3. Tone Mapping
+
+Color Grading	类似于滤镜
+		曝光 	Post-Exposure
+		对比度 	Contrast		-100,100
+		滤色	Color Filter	没有 alpha 的 HDR颜色
+		色调偏移	Hue Shift		-180,180
+		饱和度	Saturation		-100,100
+
+Post-Exposure	clamp(color,60)    color*调整值
+对比度		线性 转换到 Log 空间
+对比度		（ color- 中灰值 ） * 调整值 +中灰值
+对比度		Log空间 转换到 线性空间
+对比度		钳制到 大于 0.0 (对比度增加，产生负值 )
+滤色		color * ColorFilter.rgb
+色调偏移		转换到 HSV , 调节，然后 HSV 转换 RGB
+饱和度		( color-luminance ) * 调整值 + luminance
+
+白平衡		色温
+白平衡		Linear 转换到  LMS空间
+白平衡		color * 白平衡.rgb
+白平衡		LMS 转换到 Linear
+
+LMS颜色空间	视杆细胞 1种，对颜色感知没贡献， 低亮度水平工作
+		视锥细胞 3种， L , M , S 对不同波长光的响应值
+
+Split-Toning	转换到 gamma空间 
+Split-Toning	暗部 冷色调，亮部 暖色调
+Split-Toning	转换到 linear 空间
+
+LMS 颜色空间
+https://zhuanlan.zhihu.com/p/84891237/
