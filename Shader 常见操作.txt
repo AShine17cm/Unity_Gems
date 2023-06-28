@@ -1,0 +1,12 @@
+cginc 文件位置	Unity的安装目录	\Editor\Data\CGIncludes
+
+Surface Shader	
+------------- 自定义 光照函数 ------------	
+包含文件 UnityPBSLighting.cginc
+Lighting<我的光照函数>
+Lighting<我的光照函数>_GI
+
+------------ Post Processing Stack --------
+在 Legacy Forward 模式下，切换一下 URP ，再切换回来就好了
+要在 Camera上加 Universal Additional Camera Data  ?
+		
