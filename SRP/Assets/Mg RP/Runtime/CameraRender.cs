@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+
+/* 创建 命名的Command Buffer 用于渲染，调试 */
 public partial class CameraRender
 {
     const string bufferName = "Mg: Render Camera";
     static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
-     static ShaderTagId litShaderTagId =new ShaderTagId("MgLit");
+    static ShaderTagId litShaderTagId =new ShaderTagId("MgLit");
     static int frameBufferId= Shader.PropertyToID("_CameraFrameBuffer");
 
     ScriptableRenderContext context;    //provides a connection to the native engine
@@ -76,7 +78,7 @@ public partial class CameraRender
         //shader tags
         var drawingSettings = new DrawingSettings
             (
-            unlitShaderTagId, sorttingSettings
+           unlitShaderTagId , sorttingSettings
             )
         {
             enableDynamicBatching = useDynamicBatching,         //动态合批
@@ -87,14 +89,15 @@ public partial class CameraRender
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
         //filteringSettings.renderQueueRange = RenderQueueRange.opaque;  不能这么写
 
-
+        //不透明
         context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
         context.DrawSkybox(camera);
 
+        //透明物体
         sorttingSettings.criteria = SortingCriteria.CommonTransparent;
         drawingSettings.sortingSettings = sorttingSettings;
         filteringSettings.renderQueueRange = RenderQueueRange.transparent;
-
+        //drawingSettings.SetShaderPassName(1, unlitShaderTagId); 
         context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
     }
     void Submit()

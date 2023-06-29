@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+/*
+ 主要是 Render: 相机的栈
+将渲染外包给 CameraRender
+ */
 public class MgRenderPipeline : RenderPipeline
 {
     CameraRender renderer = new CameraRender();// first-person, 3D-Map,forward,deferred

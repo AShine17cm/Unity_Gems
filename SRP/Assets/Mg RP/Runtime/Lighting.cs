@@ -9,13 +9,11 @@ public class Lighting
 {
     const string bufferName = "Lighting";
     const int maxDirLightCount = 4;
-    static int 
-        dirLightCountId=Shader.PropertyToID("_DirLightCount"),
-        dirLightColorId = Shader.PropertyToID("_DirLightColors"),
-        dirLightDirectionId = Shader.PropertyToID("_DirLightDirections");
-    static Vector4[]
-        dirLightColors = new Vector4[maxDirLightCount],
-        dirLightDirections = new Vector4[maxDirLightCount];
+    static int dirLightCountId = Shader.PropertyToID("_DirLightCount");
+    static int dirLightColorId = Shader.PropertyToID("_DirLightColors");
+    static int dirLightDirectionId = Shader.PropertyToID("_DirLightDirections");
+    static Vector4[] dirLightColors = new Vector4[maxDirLightCount];
+    static Vector4[] dirLightDirections = new Vector4[maxDirLightCount];
 
     CommandBuffer buffer = new CommandBuffer { name = bufferName };
 

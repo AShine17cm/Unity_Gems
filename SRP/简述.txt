@@ -1,17 +1,73 @@
-URP Asset		只是一个让 Unity 可以获取 Pipeline 实例的手段
-		一个 handle 和存储设置的地方
-URP Asset		创建自定义的 RenderPipeline
+URP Asset		只是一个让 Unity 可以获取 Pipeline 实例的手段,一个 handle 和存储设置的地方
+RenderPipelineAsset	创建自定义的 RenderPipeline	/GraphicsSettings
+		自定义配置参数  useDynamincBatching  useGPUInstancing  useSRPBacther
+RenderPipeline	Render : ScriptableRenderContext  + Camera[ ] 栈
+
+
+------------------------ Camera Render --------------------------
+CameraRender	将渲染外包给 CameraRender
+CameraRender实现 	first-person, 3D-Map, forward, deferred
+CommandBuffer	命名的 Buffer, 用于调试
+context		在Editor中画 UGUI: EmitWorldGeometryForSceneView
+
+Camera 剔除参数	TryGetCullingParameters : ScriptableCullingParameters
+Camera 剔除参数	层Mask, 相机位置, fov ：LOD
+Camera 剔除参数	需要灯光，最大灯光数量, 反射探针
+Camera 剔除参数	阴影距离，阴影Casters
+Camera 剔除参数	剔除矩阵，Occlusion Cull
+context		剔除操作 : Culling Results
+
+context		VP 矩阵 : SetupCameraProperties
+context		执行 CommandBuffer
+
+
+------------------------ CommandBuffer ---------------------------------
+CommandBuffer	清除帧: CameraClearFlags : Color,Depth
+CommandBuffer	开始Sample
+
+
+----------------------- Lighting （对应 Lighting.HLSL）---------------------
+Lighting		最大灯光数量
+Lighting		从 Culling Results 中获取灯光, 类型，颜色，参数
+Lighting		设置（Global）灯光数据
+Lighting		执行 :  用自己的 CommandBuffer 执行
+------------------------ Lighting.HLSL -----------------------------------------
+CBUFFER		_MgLight		数量，颜色，方向
+
+
+-------------------------- CameraRender : 画几何体 ---------------------------
+排序 Sorting	相机位置, 轴向Axis, 预定义的排序: Opaque , Transparent , BackToFront ,  RenderQueue, Priority
+过滤 Filtering	Queue范围: min,max		预设值: opaque, transparent
+过滤 Filtering	层遮罩
+渲染 Drawing	ShaderTagId <MgLit, SRPDefaultUnlit>
+渲染 Drawing	instancing,bacthing, 替代材质,  PerObjectData ?
+context		DrawRenders
+context		DrawSkybox
+
+-------------------------- CameraRender : 画透明 ---------------------------
+排序 Sorting	预定义 Transparent
+过滤 Filtering	预定义 QueueRange: transparent
+渲染 Drawing	排序
+context		DrawRenders
+
+-------------------------- CameraRender : Legacy  -------------------------
+排序 Sorting	默认值
+过滤 Filtering	默认值
+渲染Drawing	overrideMaterial, ShaderTagId: 构造函数 1个，再逐次添加 Always, ForwardBase, ForwardAdd, PrepassBase, Vertex, VertexLM
+
+--------------------------- CameraRender : Gizmos -------------------------
+context		DrawGizmos:  两个类型 Pre/Post  ImageEffects
+
+
+--------------------------- 透明物体的区分----------------------------
+ShaderTagId	RenderQueue-Range
+同一个Shader 有不同的变体，通过Queue过滤
+
+---------------------------------Lit.Shader + LitPass.hlsl -------------------------------------
+LightMode	MgLit 
+
 
 ScriptableRenderContext
-
-VP矩阵		根据 Camera设定
-剔除操作		Cull
-绘制操作		DrawRenders
-天空盒
-
-Gizmos		通过GizmoSubset 选择类别
-Editor视口		绘制UI, 静态方法 EmitWorldGeometryForSceneView
-
 拷贝指令		ExecuteCommandBuffer
 提交
 
@@ -19,9 +75,11 @@ Command Buffer
 BeginSample / EndSample
 清空 RenderTarget
 
-CullingResults	visibleLights		颜色，矩阵，类型
-CullingResults	visibleOffscreenVertexLights
-CullingResults	visibleReflectionProbes	反射探针，矩阵，纹理
+--------------------------------- CullingResults -------------------------------------
+visibleLights		颜色，矩阵，类型
+visibleOffscreenVertexLights
+visibleReflectionProbes	反射探针，矩阵，纹理
+
 
 2019 版本
 UI 如果是 Screen-Space-Overlay 就不会用 SRP渲染
