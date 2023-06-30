@@ -1,0 +1,36 @@
+SRP	自己控制渲染流程
+URP / HDRP 是基于 SRP 的模板		URP：  LWRP
+
+--------------------------- ScriptableRendererFeature ---------------------------
+--Create		在 ScriptableRender( )
+创建 RenderPass
+设置 RenderPassEvent
+获取 LayerMask
+
+--AddRenderPass	在 ScriptableRender.Setup
+使用 ScriptableRender.EnqueuePass
+
+--SetActive
+
+-------------------------------ScriptableRenderPass---------------------------------
+--构造函数
+depthRT		RenderTargetIdentifier ( depthMapID )	Filtering 
+
+--Configure	ScriptableRender
+cmd GetRT	depthID
+ConfigureTarget 	depthRT
+ConfigureClear	
+
+--Execute		ScriptableRender
+CreateDrawingSettings	Drawing	ShaderTagId[ ]	RenderingData
+				overrideMaterial
+context.DrawRenders
+
+--FrameCleanup	ReleaseRT
+
+
+
+------------------------------- RenderingData -----------------------------------------
+CullingResults
+CameraData	VP, RenderTarget, Camera
+CameraData	shadowDistance

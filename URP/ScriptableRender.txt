@@ -1,0 +1,46 @@
+-- 构造函数	调用		 Feature.Create
+	
+--ConfigureCameraTarget		<RenderTargetIdentifier color/depth
+--Setup				<ScriptableRenderContext , RenderingData
+
+--SetupCullingParameters		<ScriptableCullingParameters , CameraData
+--Execute				<ScriptableRenderContext , RenderingData
+	--ClearRenderingState		
+		cmd.DisableShaderKeyword 	MainLightShadows / MainLightShadowCascades
+	--SetPerCameraShaderVariables	<CameraData
+		cmd: SetGlobalVector	worldSpaceCameraPos
+		cmd: SetGlobalVector	screenParams
+		cmd: SetGlobalVector	zBufferParams
+	--SetShaderTimeValues
+		cmd: SetGlobalVector	timeVector
+		cmd: SetGlobalVector	unity_DeltaTime
+	
+	--SetupLights			<ScriptableRenderContext , RenderingData
+
+	--FillBlockRanges			关联渲染事件+RenderPass ID
+	--ExecuteBlock 渲染前事件		<context , RenderingData
+	--ExecuteBlock 渲染前事件		ExecuteRenderPass  渲染Input Textures 阴影
+
+	-- XR ?
+		context.SetupCameraProperties 	<Camera
+		SetCameraMatrices			<CameraData
+		SetShaderTimeValues
+		ExecuteBlock  不透明事件		<context , RenderingData
+		ExecuteBlock  透明事件		<context , RenderingData
+		ExecuteBlock  渲染完事件		<context , RenderingData
+
+	--DrawGizmos
+	--InternalFinishRendering
+
+--FinishRendering			<CommandBuffer
+-----------------------------------------------------------------------------------------------------------
+--ExecuteRenderPass	<context ,  ScriptableRenderPass , RenderingData
+	pass.Configure	<RenderTextureIdentifier
+	SetRenderTarget
+	pass.Execute	<context , RenderingData
+-----------------------------------------------------------------------------------------------------------
+
+x--ConfigureActiveTarget		<RenderTargetIdentifier color/depth
+x--SetCameraMatrices		<CameraData
+	cmd: SetViewProjectionMatrices
+
