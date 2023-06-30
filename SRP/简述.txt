@@ -1,7 +1,7 @@
-URP Asset		只是一个让 Unity 可以获取 Pipeline 实例的手段,一个 handle 和存储设置的地方
+RP Asset		只是一个让 Unity 可以获取 Pipeline 实例的手段,一个 handle 和存储设置的地方
 RenderPipelineAsset	创建自定义的 RenderPipeline	/GraphicsSettings
 		自定义配置参数  useDynamincBatching  useGPUInstancing  useSRPBacther
-		shadowSettings, fxPostSettings
+		shadowSettings, PostFxSettings
 
 RenderPipeline	Render : ScriptableRenderContext  + Camera[ ] 栈
 
@@ -78,14 +78,6 @@ ShaderTagId	RenderQueue-Range
 ---------------------------------Lit.Shader + LitPass.hlsl -------------------------------------
 LightMode	MgLit 
 
-
-ScriptableRenderContext
-拷贝指令		ExecuteCommandBuffer
-提交
-
-Command Buffer
-BeginSample / EndSample
-清空 RenderTarget
 
 --------------------------------- CullingResults -------------------------------------
 visibleLights		颜色，矩阵，类型

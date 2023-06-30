@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Mg RP/Bloom.unity
+- path: Assets/Mg RP/Bake LM.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

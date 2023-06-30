@@ -114,7 +114,7 @@ public partial class PostFXStack
         this.camera = camera;
         //this.settings = settings;
         this.settings = camera.cameraType <= CameraType.SceneView ? settings : null;
-        ApplySceneViewState();
+        ApplySceneViewState();//ÊÇ·ñ½ûÓÃ
     }
     public void Render(int sourceId)
     {

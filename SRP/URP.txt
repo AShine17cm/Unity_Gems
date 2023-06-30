@@ -1,0 +1,9 @@
+UniversalForward
+UniversalGBuffer
+UniversalForwardOnly	可用于 Deferred 渲染
+Universal2D
+ShadowCaster
+DepthOnly
+Meta		烘焙光照贴图
+SRPDefaultUnlit	标记一个额外的绘制的 Pass，  在 Forward和Deferred 中均有效
+		Pass没有 LightMode标签时，是默认值

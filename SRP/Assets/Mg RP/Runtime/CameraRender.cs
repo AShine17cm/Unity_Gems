@@ -9,6 +9,8 @@ public partial class CameraRender
     const string bufferName = "Mg: Render Camera";
     static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
     static ShaderTagId litShaderTagId =new ShaderTagId("MgLit");
+    static ShaderTagId lit2ShaderTagId = new ShaderTagId("MgLit2");
+    static ShaderTagId urpShaderTagId = new ShaderTagId("UniversalForward");//?
     static int frameBufferId= Shader.PropertyToID("_CameraFrameBuffer");// display或者 预定义的RT  无法控制
 
     ScriptableRenderContext context;    //provides a connection to the native engine
@@ -91,9 +93,12 @@ public partial class CameraRender
             )
         {
             enableDynamicBatching = useDynamicBatching,         //动态合批
-            enableInstancing = useGPUInstancing                 //实例化
+            enableInstancing = useGPUInstancing,                 //实例化
+            perObjectData= PerObjectData.Lightmaps
         };
         drawingSettings.SetShaderPassName(1, litShaderTagId);
+        drawingSettings.SetShaderPassName(2, lit2ShaderTagId);   
+        //drawingSettings.SetShaderPassName(3, urpShaderTagId);   //兼容 URP
         //queue 范围
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
         //filteringSettings.renderQueueRange = RenderQueueRange.opaque;  不能这么写

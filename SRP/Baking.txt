@@ -1,0 +1,26 @@
+Light	Mixed	只烘焙 间接光照
+Light 	Baked	烘焙 直接光照+间接光照
+
+PerObjectData.Lightmaps
+lightmap的UV 是 顶点数据的一部分,  当LIGHTMAP_ON 开启时 假定这个数据存在
+
+LightProbe  适合动态小物体
+Spherical harmonics L2
+float4 unity_SHAr		Ar Ag Ab    Br  Bg  Bb   C
+			多项式参数 
+			SampleSH9(ormal)
+
+ light probe proxy volume, LPPV 
+采样 lightProbe
+Volume Data 存储于 3D Texture, 采样是需要 转换到 LPPV的空间
+
+unity_ProbeVolumeParams.x 判定是否 LPPV
+
+用于烘焙的 LightMode=Meta
+顶点函数  posCS	baseUV	lightmapUV
+
+将光照贴图上的坐标 投射/暂存到 Object-Space 上的xy位置
+将Mesh映射到 lightmap的平面上?
+input.positionOS.xy =input.lightMapUV * unity_LightmapST.xy + unity_LightmapST.zw;
+
+output.positionCS = TransformWorldToHClip(input.positionOS);
