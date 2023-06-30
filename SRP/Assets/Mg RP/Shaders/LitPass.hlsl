@@ -3,6 +3,7 @@
 
 #include "../ShaderLibrary/Common.hlsl"
 #include "../ShaderLibrary/Surface.hlsl"
+#include "../ShaderLibrary/Shadows.hlsl"
 #include "../ShaderLibrary/Light.hlsl"
 #include "../ShaderLibrary/BRDF.hlsl"
 #include "../ShaderLibrary/Lighting.hlsl"
@@ -58,8 +59,6 @@ Varyings LitPassVertex(Attributes input)
 
 float4 LitPassFragment(Varyings input) : SV_TARGET
 {
-
-
 	UNITY_SETUP_INSTANCE_ID(input);
 	float4 baseMap = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, input.baseUV);
 	float4 baseColor = UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterial, _BaseColor);
@@ -71,6 +70,7 @@ float4 LitPassFragment(Varyings input) : SV_TARGET
 	
 
 	Surface surface;
+	surface.position = input.posWS;
 	surface.normal = normalize(input.normalWS);
 	surface.viewDir = normalize(_WorldSpaceCameraPos - input.posWS);
 	surface.color = base.rgb;
@@ -81,6 +81,8 @@ float4 LitPassFragment(Varyings input) : SV_TARGET
 	BRDF brdf = GetBRDF(surface);
 	float3 color = GetLighting(surface,brdf);
 
+	//float shadow = GetDirectionalShadowAttenuation(surface);
+	//color *= shadow;
 	return float4(color,surface.alpha);
 
 }

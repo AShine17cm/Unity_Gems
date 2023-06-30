@@ -16,15 +16,18 @@ public class Lighting
     static Vector4[] dirLightDirections = new Vector4[maxDirLightCount];
 
     CommandBuffer buffer = new CommandBuffer { name = bufferName };
-
     CullingResults cullingResults;
-    public void Setup(ScriptableRenderContext context,CullingResults cullingResults)
+    Shadows shadows = new Shadows();
+    public void Setup(ScriptableRenderContext context,
+        CullingResults cullingResults,
+        ShadowSettings shadowSettings)
     {
         this.cullingResults = cullingResults;
 
         buffer.BeginSample(bufferName);
-
+        shadows.Setup(context, cullingResults, shadowSettings); //阴影
         SetupLights();
+        shadows.Render();
 
         buffer.EndSample(bufferName);
         context.ExecuteCommandBuffer(buffer);
@@ -56,5 +59,10 @@ public class Lighting
     {
         dirLightColors[index] = visibleLight.finalColor;
         dirLightDirections[index] = -visibleLight.localToWorldMatrix.GetColumn(2);
+        shadows.ReserveDirectionalShadows(visibleLight.light, index);   //产生阴影的灯光 ?
+    }
+    public void Cleanup()
+    {
+        shadows.Cleanup();
     }
 }

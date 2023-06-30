@@ -9,6 +9,8 @@ public class MgRenderPipelineAsset : RenderPipelineAsset
     [SerializeField]
     bool useDynamicBatching = true, useGPUInstancing = true, useSRPBatcher = true;
     [SerializeField]
+    ShadowSettings shadows = default;
+    [SerializeField]
     PostFXSettings postFXSettings = default;
 
     protected override RenderPipeline CreatePipeline()
@@ -17,6 +19,7 @@ public class MgRenderPipelineAsset : RenderPipelineAsset
             useDynamicBatching,
             useGPUInstancing,
             useSRPBatcher,
+            shadows,
             postFXSettings);
     }
 

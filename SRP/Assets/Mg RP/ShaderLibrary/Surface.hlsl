@@ -3,6 +3,7 @@
 
 struct Surface 
 {
+	float3 position;	//Shadow coord
 	float3 normal;
 	float3 viewDir;
 	float3 color;

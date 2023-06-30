@@ -11,17 +11,20 @@ public class MgRenderPipeline : RenderPipeline
     CameraRender renderer = new CameraRender();// first-person, 3D-Map,forward,deferred
     bool useDynamicBatching, useGPUInstancing;
 
+    ShadowSettings shadowSettings;
     PostFXSettings postFXSettings;
 
     public MgRenderPipeline(
         bool useDynamicBatching, 
         bool useGPUInstancing, 
         bool useSRPBatcher,
+        ShadowSettings shadowSettings,
         PostFXSettings postFXSettings)
     {
-        this.postFXSettings = postFXSettings;
         this.useDynamicBatching = useDynamicBatching;
         this.useGPUInstancing = useGPUInstancing;
+        this.shadowSettings = shadowSettings;
+        this.postFXSettings = postFXSettings;
 
         GraphicsSettings.useScriptableRenderPipelineBatching = useSRPBatcher;    //¿ªÆô SRP Batcher
         GraphicsSettings.lightsUseLinearIntensity = true;
@@ -33,6 +36,7 @@ public class MgRenderPipeline : RenderPipeline
             renderer.Render(context, camera,
                 useDynamicBatching,
                 useGPUInstancing,
+                shadowSettings,
                 postFXSettings);
         }
     }

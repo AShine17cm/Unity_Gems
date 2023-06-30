@@ -9,7 +9,7 @@ public partial class CameraRender
     const string bufferName = "Mg: Render Camera";
     static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
     static ShaderTagId litShaderTagId =new ShaderTagId("MgLit");
-    static int frameBufferId= Shader.PropertyToID("_CameraFrameBuffer");
+    static int frameBufferId= Shader.PropertyToID("_CameraFrameBuffer");// display或者 预定义的RT  无法控制
 
     ScriptableRenderContext context;    //provides a connection to the native engine
     Camera camera;
@@ -19,16 +19,23 @@ public partial class CameraRender
     CullingResults cullingResults;
 
     public void Render(ScriptableRenderContext context,Camera camera,
-        bool useDynamicBatching,bool useGPUInstancing,
+        bool useDynamicBatching,
+        bool useGPUInstancing,
+        ShadowSettings shadowSettings,
         PostFXSettings postFXSettings)
     {
         this.context = context;
         this.camera = camera;
         PrepareBuffer();            //Editor: 使得 command-buffer 的名字和camera一致
         PrepareForSceneWindow();    //Editor: 在Cull 之前画UI
-        if (!Cull()) return;
-        Setup();                                    //VP 矩阵, Clear Target
-        lighting.Setup(context,cullingResults);     //通过 CommandBuffer 设置灯光数据 
+        if (!Cull(shadowSettings.shadowDistance)) return;
+
+        buffer.BeginSample("SampleName");
+        ExecuteBuffer();
+        lighting.Setup(context,cullingResults,shadowSettings);  //通过 CommandBuffer 设置灯光数据 
+        buffer.EndSample("SampleName");
+
+        Setup();                                                //VP 矩阵, Clear Target
         postFXStack.Setup(context, camera, postFXSettings);
 
         DrawVisibleGeometry(useDynamicBatching,useGPUInstancing);      //srp shader
@@ -56,7 +63,8 @@ public partial class CameraRender
         bool clearDepth = flags <= CameraClearFlags.Depth;
         bool clearColor = flags == CameraClearFlags.Color;
         Color clearC = flags == CameraClearFlags.Color ? camera.backgroundColor.linear : Color.clear;
-        if(postFXStack.IsActive)//获取，设定目标帧
+        //_CameraFrameBuffer  无法控制,需要提供一个中间的RT 用作postFX的source
+        if (postFXStack.IsActive)//获取，设定目标帧
         {
             if(flags>CameraClearFlags.Color)
             {
@@ -65,6 +73,7 @@ public partial class CameraRender
             buffer.GetTemporaryRT(frameBufferId, camera.pixelWidth, camera.pixelHeight, 32, FilterMode.Bilinear, RenderTextureFormat.Default);
             buffer.SetRenderTarget(frameBufferId, RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store);
         }
+
         buffer.ClearRenderTarget(clearDepth, clearColor, clearC);
         buffer.BeginSample(bufferName);         //用于 Profiler 和 Frame-Debugger
         ExecuteBuffer();
@@ -104,6 +113,7 @@ public partial class CameraRender
     {
         buffer.EndSample(bufferName);
         ExecuteBuffer();
+        lighting.Cleanup();
         context.Submit();
     }
 
@@ -112,10 +122,11 @@ public partial class CameraRender
         context.ExecuteCommandBuffer(buffer);   //拷贝 指令
         buffer.Clear();
     }
-    bool Cull()
+    bool Cull(float shadowDistance)
     {
         if(camera.TryGetCullingParameters(out ScriptableCullingParameters p))
         {
+            p.shadowDistance = shadowDistance;      //阴影距离
             cullingResults = context.Cull(ref p);   //剔除操作
             return true;
         }
