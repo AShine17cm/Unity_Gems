@@ -57,11 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TestJob.cs" />
-    <Compile Include="Assets\Thread Culling\Occluder.cs" />
-    <Compile Include="Assets\Thread Culling\ItemData.cs" />
-    <Compile Include="Assets\Thread Culling\CullHelper.cs" />
-    <Compile Include="Assets\Thread Culling\CullData.cs" />
     <Compile Include="Assets\CullingJob.cs" />
+    <Compile Include="Assets\Occluder.cs" />
+    <Compile Include="Assets\Thread Culling\Dx_ThreadCullHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

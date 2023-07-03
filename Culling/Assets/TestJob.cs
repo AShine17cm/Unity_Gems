@@ -10,9 +10,11 @@ using JobCuller;
 public class TestJob : MonoBehaviour
 {
     public Camera cam;
-    public LayerMask occluderMask;      //遮挡物  空气墙
-    public LayerMask occludeeMask;      //被遮挡物  油桶，树木
-    public float dist = 10f;         //大于此距离 才做剔除
+    //public LayerMask occluderMask;      //遮挡物  空气墙
+    //public LayerMask occludeeMask;      //被遮挡物  油桶，树木
+    public float dist = 10f;            //大于此距离 才做剔除
+    
+    public float vault = 1f;
     float sqrDist;
 
     List<GameObject> goes = new List<GameObject>(1024);
@@ -53,13 +55,15 @@ public class TestJob : MonoBehaviour
         {
             occludees[i] = occludeeDatas[i];
         }
-
+        //NDC 空间(-1,1) 太敏感，转换到 screen
         CullingJob jobData = new CullingJob
         {
-            //world2View = cam.worldToCameraMatrix,
-            world2Screen = cam.projectionMatrix * cam.worldToCameraMatrix,
+            world2View = cam.worldToCameraMatrix,
+            world2Clip = cam.projectionMatrix * cam.worldToCameraMatrix,
+            scrWidth=Screen.width,
+            scrHeight=Screen.height,
+            vault=vault,
             camPos=camPos,
-            camFwd=camFwd,
             occluders = occluders,
             occludees = occludees,
             result = ocResults
@@ -78,8 +82,9 @@ public class TestJob : MonoBehaviour
         occludees.Dispose();
         ocResults.Dispose();
     }
-
-    public void Collect(Camera cam) //收集数据
+    //收集 遮挡物+被遮挡物
+    //在视锥体之内，距离相机足够远
+    public void Collect(Camera cam) 
     {
         occluderDatas.Clear();
         occludeeDatas.Clear();
@@ -102,8 +107,8 @@ public class TestJob : MonoBehaviour
         for (int i = 0; i < goes.Count; i++)
         {
             GameObject go = goes[i];
-            // 被遮挡物
-            if ((go.layer & (~occludeeMask)) != 0)
+            
+            // 被遮挡物, 可以是未被激活的
             {
                 MeshRenderer mr = go.GetComponentInChildren<MeshRenderer>();
                 if (mr)
@@ -120,7 +125,6 @@ public class TestJob : MonoBehaviour
                             OccludeeData occ = new OccludeeData();
                             occ.id = go.GetInstanceID();
                             occ.sqrRadius = mr.bounds.extents.sqrMagnitude;
-                            //occ.radius = mr.bounds.extents.magnitude; //此数据可子线程上计算
                             occ.posWS = tr.position;
                             occ.state = -1;                 //状态不确定
                             occludeeDatas.Add(occ);
@@ -129,11 +133,12 @@ public class TestJob : MonoBehaviour
                     }
                 }
             }
-            //遮挡物
+            //遮挡物 必须是激活的
             //if ((go.layer & (~occluderMask)) != 0)
+            if (!go.activeSelf) continue;
             {
-               Occluder occluder = go.GetComponent<Occluder>();
-                if (occluder)
+                Occluder occluder = go.GetComponent<Occluder>();
+                if (occluder&&occluder.enabled)
                 {
                     Transform tr = go.transform;
                     Vector3 posWS = tr.position;

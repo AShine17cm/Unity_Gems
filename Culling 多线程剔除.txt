@@ -1,0 +1,33 @@
+Unity.Jobs
+Unity.Collections
+IJob.Execute		是在子线程上 入口函数
+IJob.Schedule		是主线程上   入口函数
+JobHanlde.Complete		同步到主线程
+NativeArray<> 		只要是值类型的结构体就行	OccluderData	OccludeeData
+要点			将两个多边形之间的包含关系，转换为 多边形和点之间的包含关系
+----------------------- Job --------------------------
+第一趟	计算 Occludee 的半径，到相机的距离 Distance
+第二趟	比较 Occluder 和 Occludee 到相机的距离
+	根据距离比值  缩放 Occludee的半径
+	收缩 Occluder的 Rect
+	将 收缩后的Rect 投影到屏幕上
+	使用收缩后的 Rect 检测是否包含了 Occludee的中心点
+	面积检测，如果在Rect内部，面积相等
+	面积检测，乳房在Rect外部，大于 Rect的面积
+
+---------------------- Occluder 和 OccluderData  ------------------------
+一个 Mono ,便于搜集，调试
+区域大小	Rect
+可选参照	GameObject
+模拟Cull	一般模式下 模拟Job中的剔除操作，有Gizmo帮助调试
+
+可返回	OccluderData 给Job使用
+
+---------------------- OccludeeData ---------------------------
+只有距离相机	达到一定距离的物体才会 被剔除
+ID	用于标记GameObject
+位置
+半径
+state	标记是否可见
+
+
