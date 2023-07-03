@@ -1,0 +1,2 @@
+纹理支持检查	SystemInfo	.SupportsTextureFormat	
+选择性标记 Static	StaticEditorFlags ori = GameObjectUtility.GetStaticEditorFlags(go);

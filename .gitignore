@@ -3,12 +3,15 @@ FFT_Ocean/Library
 SRP/Library
 Waters/Library
 Culling/Library
+URP/Library
 Compute/Logs
 FFT_Ocean/Logs
 SRP/Logs
 Waters/Logs
 Culling/Logs
+URP/Logs
 FFT_Ocean/Temp
 SRP/Temp
 FFT_Ocean/obj
 Culling/Temp
+URP/Temp
