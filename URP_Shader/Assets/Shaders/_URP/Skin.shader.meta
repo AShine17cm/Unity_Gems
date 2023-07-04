@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7ce7809314532a24d846ba743f37a228
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _BaseMap: {instanceID: 0}
+  - _NSMap: {instanceID: 0}
+  - _EmissionMap: {instanceID: 0}
+  - _LUTMap: {fileID: 2800000, guid: 3b145faea86314d09ab42116437731c1, type: 3}
+  - _MainTex: {instanceID: 0}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: shader/shaders.ab
+  assetBundleVariant: 

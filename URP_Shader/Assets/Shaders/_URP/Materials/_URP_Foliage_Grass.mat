@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _URP_Foliage_Grass
+  m_Shader: {fileID: 4800000, guid: 6af74792f33b3a946bc77348ec4598c3, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 0
+    - _CameraDistance: 100
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Distortion: 0.01
+    - _EnableSSS: 0
+    - _Material_Quality: 0
+    - _QueueOffset: 0
+    - _Range: 0.1
+    - _ReceiveShadows: 1
+    - _ShadowStrength: 0.7
+    - _Speed: 3
+    - _TranslucencyPower: 7
+    m_Colors:
+    - _SubsurfaceColor: {r: 1, g: 0.39999998, b: 0.24999997, a: 1}

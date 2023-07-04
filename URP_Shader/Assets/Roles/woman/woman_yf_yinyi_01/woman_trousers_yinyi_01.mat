@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3406608156060231481
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: woman_trousers_yinyi_01
+  m_Shader: {fileID: 4800000, guid: de6a6361ca8391244b495007fcdb3fc2, type: 3}
+  m_ShaderKeywords: _NORMALMAP
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: b54f991107c427648afd35642177ba7e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: c0d1ce50226628e48bbb2044edda4fdf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EnvironmentMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IridescenceThicknessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUTMap:
+        m_Texture: {fileID: 2800000, guid: 3b145faea86314d09ab42116437731c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: fa05df8b9035c3f4395c10d24b685545, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap:
+        m_Texture: {fileID: 2800000, guid: 7d774b8cb6efc56439be6b639d4aef6e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NSMap:
+        m_Texture: {fileID: 2800000, guid: 6ec0fbff2c19ae047bdfd23fbb18a700, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PatternMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _Cull: 2
+    - _Cutoff: 0
+    - _DstBlend: 0
+    - _EmissionEnabled: 0
+    - _EmissionPower: 1
+    - _EnableEnvironmentMap: 0
+    - _EnableMaskMap: 1
+    - _EnablePattern: 0
+    - _EnableRim: 0
+    - _EnableSkin: 0
+    - _EnableStippleTransparency: 0
+    - _EnvExposure: 0.96
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _IridescenceThickness: 0.6
+    - _IridescneceEta2: 0.6
+    - _IridescneceEta3: 2
+    - _IridescneceKappa3: 0
+    - _Material_Quality: 0
+    - _Metallic: 0
+    - _OcclusionStrength: 1
+    - _PanOrPulsateEmission: 0
+    - _PunctualLightSpecularExposure: 1
+    - _QueueOffset: 0
+    - _ReadProps: 0
+    - _ReceiveShadows: 1
+    - _RimIntensity: 1
+    - _RimPower: 1
+    - _RimSmoothness: 1.72
+    - _RimWidth: 0.4
+    - _Shininess: 0
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - _lightPower: 1.5
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ChangeColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.9939631, g: 0.023584902, b: 1, a: 1}
+    - _EnvironmentColor: {r: 0, g: 0, b: 0, a: 0}
+    - _IridescenceThicknessRemap: {r: 0.3, g: 1.8, b: 0, a: 0}
+    - _PanOrPulsate: {r: 1, g: 1, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 0, a: 1}
+    - _SpecColor: {r: 0.19998878, g: 0.19998878, b: 0.19998878, a: 0.5}
+    - _addSkinColor: {r: 0.7264151, g: 0.7182957, b: 0.6339, a: 1}

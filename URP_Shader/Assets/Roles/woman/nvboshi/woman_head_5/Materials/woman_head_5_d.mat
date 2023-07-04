@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: woman_head_5_d
+  m_Shader: {fileID: 4800000, guid: 7ce7809314532a24d846ba743f37a228, type: 3}
+  m_ShaderKeywords: _READ_PROPS
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: c259f4a2d6becb14285763eb46b9e1ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f1adc6d1eecedcc42ae8f7c835d2a63f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUTMap:
+        m_Texture: {fileID: 2800000, guid: 3b145faea86314d09ab42116437731c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c259f4a2d6becb14285763eb46b9e1ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NSMap:
+        m_Texture: {fileID: 2800000, guid: 040c1c049d2edb441b14a17048463a76, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 0
+    - _ColorMode: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _EmissionEnabled: 0
+    - _EmissionPower: 1
+    - _EnableMaskMap: 0
+    - _EnvironmentReflections: 1
+    - _Material_Quality: 0
+    - _PanOrPulsateEmission: 0
+    - _QueueOffset: 0
+    - _ReadProps: 1
+    - _ReceiveShadows: 1
+    - _SetLOD: 0
+    - _Shininess: 0
+    - _Smoothness: 0.718
+    - _SpecularHighlights: 1
+    m_Colors:
+    - _ChangeColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PanOrPulsate: {r: 1, g: 1, b: 0.5, a: 0}
+    - _SpecColor: {r: 0.18877375, g: 0.18877375, b: 0.18877375, a: 0.718}
