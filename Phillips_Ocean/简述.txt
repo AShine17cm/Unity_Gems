@@ -1,0 +1,18 @@
+----------------蝶形交换Lut---------------
+列数是 stage  行数是fourier信号
+x,y 是 信号的index    z,w 是系数
+
+蝶形交换的 信号排列顺序	是	输入顺的(1,2,3....)的  字节翻转
+
+-------------- dispersionTable -------------
+中心分布	正比于波数的二维表		N+1 x N+1
+
+heights	2个  N x N
+slope	2个  N x N
+displace    2个  N x N
+
+spectrum   	N+1  x  N+1
+spectrum_conj	N+1  x  N+1
+
+初始谱
+高斯随机	Phillip 二维能量谱, x,y相关
