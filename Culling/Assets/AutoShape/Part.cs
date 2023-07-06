@@ -9,4 +9,7 @@ public class Part
     public List<float>[] probabilites;
     public List<int>[] offsets;
 
+    public GameObject go;
+    public string name;
+
 }

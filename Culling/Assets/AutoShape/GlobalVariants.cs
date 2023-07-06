@@ -37,6 +37,7 @@ public class GlobalVariants
                 {
                     globalId += 1;
                     poseVariants.Add(pose, globalId);
+                    //Debug.Log("global-id:"+type+"  :  " + globalId);
                 }
                 else//有对称,对称在后
                 {

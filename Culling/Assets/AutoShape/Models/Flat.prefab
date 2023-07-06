@@ -48,19 +48,26 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
-    offset: 
+    offset: 00000000
   - type: 1
     poses: 0200000003000000
     probability:
     - 10
     - 10
-    offset: 
+    offset: 0000000000000000
   - type: 4
-    poses: 02000000
+    poses: 0200000000000000
     probability:
     - 20
-    offset: 
-  previewIdx: 0
+    - 20
+    offset: 00000000ffffffff
+  - type: 3
+    poses: 0100000000000000
+    probability:
+    - 20
+    - 20
+    offset: ffffffffffffffff
+  previewIdx: 3
   poseIdx: 0
 --- !u!1 &446874445917615537
 GameObject:
@@ -118,11 +125,18 @@ MonoBehaviour:
     - 10
     offset: 0000000000000000
   - type: 4
-    poses: 01000000
+    poses: 0100000003000000
     probability:
     - 20
-    offset: 00000000
-  previewIdx: 2
+    - 20
+    offset: 00000000ffffffff
+  - type: 3
+    poses: 0000000003000000
+    probability:
+    - 20
+    - 20
+    offset: ffffffffffffffff
+  previewIdx: 3
   poseIdx: 0
 --- !u!1 &1411342764177341884
 GameObject:
@@ -172,19 +186,26 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
-    offset: 
+    offset: 00000000
   - type: 1
     poses: 0000000001000000
     probability:
     - 10
     - 10
-    offset: 
+    offset: 0000000000000000
   - type: 4
-    poses: 00000000
+    poses: 0000000002000000
     probability:
     - 20
-    offset: 
-  previewIdx: 0
+    - 20
+    offset: 00000000ffffffff
+  - type: 3
+    poses: 0300000002000000
+    probability:
+    - 20
+    - 20
+    offset: ffffffffffffffff
+  previewIdx: 3
   poseIdx: 0
 --- !u!1 &3473322695937601031
 GameObject:
@@ -242,6 +263,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -355,17 +377,24 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
-    offset: 
+    offset: 00000000
   - type: 1
     poses: 0000000003000000
     probability:
     - 10
     - 10
-    offset: 
+    offset: 0000000000000000
   - type: 4
-    poses: 03000000
+    poses: 0300000001000000
     probability:
     - 20
-    offset: 
-  previewIdx: 0
-  poseIdx: 0
+    - 20
+    offset: 00000000ffffffff
+  - type: 3
+    poses: 0200000001000000
+    probability:
+    - 20
+    - 20
+    offset: ffffffffffffffff
+  previewIdx: 3
+  poseIdx: 1

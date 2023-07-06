@@ -11,8 +11,8 @@ public class VariantInfo
 //原型，未旋转，缩放的物件
 public class PartProto : MonoBehaviour
 {
-    const float size = 4f;
-    const float size_h = 2f;
+    const float size = 1f;
+    const float size_h = 0.5f;
     public PartType type;                   //唯一
     [Tooltip("X0,X1,Z0,Z1")]
     public Socket[] protoSockets;           //4个邻接位置
@@ -42,7 +42,7 @@ public class PartProto : MonoBehaviour
             List<int>[] sockets = new List<int>[4];             //映射到变体-id 的插槽
             List<float>[] probs = new List<float>[4];
             List<int>[] offsets = new List<int>[4];
-            for (int k = 0; k < 4; k++)
+            for (int k = 0; k < 4; k++)                         //4 个插槽
             {
                 Socket side = protoSockets[k];          //边上的插槽
                 int c = side.slots.Count;
@@ -57,7 +57,8 @@ public class PartProto : MonoBehaviour
                     {
                         PoseVariant pose_B = target.poses[t];
                         float prob = target.probability[t];
-                        int offset = target.offset[t];
+                        int offset = 0;
+                        offset = target.offset[t];
                         PoseVariant pose_final = CombinePose(pose, pose_B);//最终的方位
 
                         //id 预先计算，源于<PartType,PoseVariant>
@@ -68,8 +69,14 @@ public class PartProto : MonoBehaviour
                     }
                 }
             }
+            string name = gameObject.name + "_" + pose;
+            newGo.name = name;
             part.sockets = sockets;
             part.probabilites = probs;
+            part.offsets = offsets;
+            part.go = newGo;
+            part.name = name;
+            newGo.SetActive(false);
             GlobalVariants.AddPart(type, pose, part);//global-id 预先生成
         }
     }
