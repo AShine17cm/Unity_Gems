@@ -1,0 +1,16 @@
+在Prefab上	设置插槽数据	都是PartType 原型数据
+在Prefab上	设置对称信息	对称信息 在数组中靠后
+对称信息		旋转，缩放对称
+
+全局添加		原型PartType, 变体对称信息
+全局生成		原型PartType,Pose变体 对应的 id,   如果有Pose的对称，则映射到同一个 id
+
+变体实例		如果非对称的变体（唯一存在），实例化，并添加到全局的  <id,变体> 字典
+
+实例被旋转/缩放	其对应的原型PartType也会被旋转/缩放
+
+约束规则
+传播
+回溯	排除错误
+
+https://github.com/marian42/wavefunctioncollapse

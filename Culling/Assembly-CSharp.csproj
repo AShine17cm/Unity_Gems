@@ -58,7 +58,14 @@
   <ItemGroup>
     <Compile Include="Assets\TestJob.cs" />
     <Compile Include="Assets\CullingJob.cs" />
+    <Compile Include="Assets\AutoShape\GlobalVariants.cs" />
+    <Compile Include="Assets\AutoShape\Parttern.cs" />
     <Compile Include="Assets\Occluder.cs" />
+    <Compile Include="Assets\AutoShape\BasePart.cs" />
+    <Compile Include="Assets\AutoShape\PartConfig.cs" />
+    <Compile Include="Assets\AutoShape\PartProto.cs" />
+    <Compile Include="Assets\AutoShape\Part.cs" />
+    <Compile Include="Assets\AutoShape\Socket.cs" />
     <Compile Include="Assets\Thread Culling\Dx_ThreadCullHelper.cs" />
   </ItemGroup>
   <ItemGroup>
