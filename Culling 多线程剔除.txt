@@ -13,7 +13,7 @@ NativeArray<> 		只要是值类型的结构体就行	OccluderData	OccludeeData
 	将 收缩后的Rect 投影到屏幕上
 	使用收缩后的 Rect 检测是否包含了 Occludee的中心点
 	面积检测，如果在Rect内部，面积相等
-	面积检测，乳房在Rect外部，大于 Rect的面积
+	面积检测，如果在Rect外部，大于 Rect的面积
 
 ---------------------- Occluder 和 OccluderData  ------------------------
 一个 Mono ,便于搜集，调试

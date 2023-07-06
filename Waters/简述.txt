@@ -19,7 +19,7 @@ time-progress	为 周期数/整数，每个周期在贴图上 偏移一小块
 
 
 [NoScaleOffset] 	去掉 uv的框框
-CG	对同一个纹理采样2次，shader编译器会优化为一个采样
+CG		对同一个纹理采样2次，shader编译器会优化为一个采样
 HeightMap	法线 = cross( u向的高度差，v向的高度差)
 Derivative Map	Dx:A   Dy:G   H(高度):B  
 		计算更简单，不需要开平方
