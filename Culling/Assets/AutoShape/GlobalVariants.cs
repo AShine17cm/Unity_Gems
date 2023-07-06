@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GlobalVariants 
 {
+    public const float size = 1f;
+    public const float size_h = 0.5f;
+    public const float height = 0.5f;
     static int globalId = -1;
     static Dictionary<PartType, Dictionary<PoseVariant, int>> globalTypes = new Dictionary<PartType, Dictionary<PoseVariant, int>>(128);
     static Dictionary<PartType, VariantInfo[]> variantSymmetric = new Dictionary<PartType, VariantInfo[]>(4);

@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546888502605676965}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -101,9 +101,9 @@ MonoBehaviour:
   type: 4
   protoSockets:
   - {fileID: 2960680548092792736}
-  - {fileID: 7149892182088753637}
+  - {fileID: 8911428942073914693}
   - {fileID: 8140641215534893838}
-  - {fileID: 2051536217537189278}
+  - {fileID: 2017594496126415889}
   variantInfos:
   - variant: 0
     symetric: 8
@@ -164,7 +164,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 4
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 3
+    poses: 01000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 2
+    poses: 00000000
+    probability:
+    - 10
+    offset: 00000000
+  - type: 5
+    poses: 01000000
+    probability:
+    - 10
+    offset: 00000000
+  previewIdx: 1
+  poseIdx: 0
 --- !u!1 &2906285959984536209
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055657849657564441}
-  - component: {fileID: 2051536217537189278}
+  - component: {fileID: 2017594496126415889}
   m_Layer: 0
   m_Name: slot (3)
   m_TagString: Untagged
@@ -189,14 +216,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2906285959984536209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2178746376219974431}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2051536217537189278
+--- !u!114 &2017594496126415889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +235,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 0
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 1
+    poses: 03000000
+    probability:
+    - 10
+    offset: 00000000
+  - type: 3
+    poses: 0000000001000000
+    probability:
+    - 10
+    - 10
+    offset: ffffffffffffffff
+  previewIdx: 2
+  poseIdx: 1
 --- !u!1 &5703941124694819317
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +297,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 0
+    poses: 00000000
+    probability:
+    - 50
+    offset: 01000000
+  - type: 1
+    poses: 0000000001000000
+    probability:
+    - 10
+    - 10
+    offset: 0100000001000000
+  - type: 3
+    poses: 0200000003000000
+    probability:
+    - 10
+    - 10
+    offset: 0000000000000000
+  previewIdx: 1
+  poseIdx: 0
 --- !u!1 &7998139262744128415
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711901890825873324}
-  - component: {fileID: 7149892182088753637}
+  - component: {fileID: 8911428942073914693}
   m_Layer: 0
   m_Name: slot (1)
   m_TagString: Untagged
@@ -284,7 +348,7 @@ Transform:
   m_Father: {fileID: 2178746376219974431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7149892182088753637
+--- !u!114 &8911428942073914693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,4 +360,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 04000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 4
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 3
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 2
+    poses: 01000000
+    probability:
+    - 10
+    offset: 00000000
+  - type: 5
+    poses: 00000000
+    probability:
+    - 10
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0

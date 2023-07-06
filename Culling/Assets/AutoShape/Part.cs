@@ -7,5 +7,6 @@ public class Part
 {
     public List<int>[] sockets;
     public List<float>[] probabilites;
+    public List<int>[] offsets;
 
 }

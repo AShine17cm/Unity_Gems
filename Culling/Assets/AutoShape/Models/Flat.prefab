@@ -48,15 +48,20 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
+    offset: 
   - type: 1
     poses: 0200000003000000
     probability:
     - 10
     - 10
+    offset: 
   - type: 4
     poses: 02000000
     probability:
     - 20
+    offset: 
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &446874445917615537
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,15 +110,20 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
+    offset: 00000000
   - type: 1
     poses: 0100000002000000
     probability:
     - 10
     - 10
+    offset: 0000000000000000
   - type: 4
     poses: 01000000
     probability:
     - 20
+    offset: 00000000
+  previewIdx: 2
+  poseIdx: 0
 --- !u!1 &1411342764177341884
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,15 +172,20 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
+    offset: 
   - type: 1
     poses: 0000000001000000
     probability:
     - 10
     - 10
+    offset: 
   - type: 4
     poses: 00000000
     probability:
     - 20
+    offset: 
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &3473322695937601031
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,12 +355,17 @@ MonoBehaviour:
     poses: 00000000
     probability:
     - 50
+    offset: 
   - type: 1
     poses: 0000000003000000
     probability:
     - 10
     - 10
+    offset: 
   - type: 4
     poses: 03000000
     probability:
     - 20
+    offset: 
+  previewIdx: 0
+  poseIdx: 0

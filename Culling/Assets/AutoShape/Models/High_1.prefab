@@ -43,7 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 0
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 1
+    poses: 02000000
+    probability:
+    - 10
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &3829813530778189552
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +99,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 0
+    poses: 00000000
+    probability:
+    - 30
+    offset: 00000000
+  - type: 1
+    poses: 02000000
+    probability:
+    - 10
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &6453576831457446509
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,8 +138,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6453576831457446509}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6879883530448250974}
@@ -252,7 +276,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 04000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 3
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 2
+    poses: 04000000
+    probability:
+    - 30
+    offset: 00000000
+  - type: 5
+    poses: 00000000
+    probability:
+    - 30
+    offset: 00000000
+  previewIdx: 1
+  poseIdx: 0
 --- !u!1 &8912412350525210939
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,4 +342,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 05000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 3
+    poses: 00000000
+    probability:
+    - 50
+    offset: 00000000
+  - type: 2
+    poses: 04000000
+    probability:
+    - 30
+    offset: 00000000
+  - type: 5
+    poses: 00000000
+    probability:
+    - 30
+    offset: 00000000
+  previewIdx: 1
+  poseIdx: 0

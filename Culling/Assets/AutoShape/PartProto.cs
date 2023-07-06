@@ -41,12 +41,14 @@ public class PartProto : MonoBehaviour
             Part part = new Part();
             List<int>[] sockets = new List<int>[4];             //映射到变体-id 的插槽
             List<float>[] probs = new List<float>[4];
+            List<int>[] offsets = new List<int>[4];
             for (int k = 0; k < 4; k++)
             {
                 Socket side = protoSockets[k];          //边上的插槽
                 int c = side.slots.Count;
                 sockets[k] = new List<int>(128);
                 probs[k] = new List<float>(128);
+                offsets[k] = new List<int>(128);
                 for(int x = 0; x < c; x++)
                 {
                     Target target = side.slots[x];
@@ -55,12 +57,14 @@ public class PartProto : MonoBehaviour
                     {
                         PoseVariant pose_B = target.poses[t];
                         float prob = target.probability[t];
+                        int offset = target.offset[t];
                         PoseVariant pose_final = CombinePose(pose, pose_B);//最终的方位
 
                         //id 预先计算，源于<PartType,PoseVariant>
                         int id_on_side = GlobalVariants.GetId(part_on_side, pose_final);//插槽上的物体，随主物体旋转/缩放
                         sockets[k].Add(id_on_side);         //插槽上的PartType 直接映射到 variant-id
                         probs[k].Add(prob);
+                        offsets[k].Add(offset);
                     }
                 }
             }
@@ -226,7 +230,7 @@ public class PartProto : MonoBehaviour
         return final;
     }
     //设定旋转，缩放, 得到6个新的 Part, 可能是6个
-    Socket[] SetPose(PoseVariant pose)
+ public   Socket[] SetPose(PoseVariant pose)
     {
         Socket[] sockets = new Socket[4];
 

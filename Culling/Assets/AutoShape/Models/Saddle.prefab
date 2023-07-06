@@ -43,7 +43,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 03000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 3
+    poses: 02000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 4
+    poses: 02000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 5
+    poses: 02000000
+    probability:
+    - 100
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &4902013512569235582
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,7 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3093603683337856940}
-  - component: {fileID: 3662297998325174236}
+  - component: {fileID: 7111271151192430334}
   m_Layer: 0
   m_Name: slot (2)
   m_TagString: Untagged
@@ -75,7 +97,7 @@ Transform:
   m_Father: {fileID: 5150259954633115103}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3662297998325174236
+--- !u!114 &7111271151192430334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +109,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 03000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 3
+    poses: 00000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 4
+    poses: 03000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 5
+    poses: 00000000
+    probability:
+    - 100
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &5490651593674317669
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +158,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5490651593674317669}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -189,9 +233,9 @@ MonoBehaviour:
   type: 2
   protoSockets:
   - {fileID: 2725478001863749320}
-  - {fileID: 706766717181325875}
-  - {fileID: 3662297998325174236}
-  - {fileID: 6605437241189206536}
+  - {fileID: 3619051178304736990}
+  - {fileID: 7111271151192430334}
+  - {fileID: 894928304745380232}
   variantInfos:
   - variant: 0
     symetric: 8
@@ -218,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8328134988591044273}
-  - component: {fileID: 706766717181325875}
+  - component: {fileID: 3619051178304736990}
   m_Layer: 0
   m_Name: slot (1)
   m_TagString: Untagged
@@ -240,7 +284,7 @@ Transform:
   m_Father: {fileID: 5150259954633115103}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &706766717181325875
+--- !u!114 &3619051178304736990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,7 +296,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 01000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 3
+    poses: 00000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 4
+    poses: 00000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 5
+    poses: 00000000
+    probability:
+    - 100
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
 --- !u!1 &7852965470837755977
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39788746368205125}
-  - component: {fileID: 6605437241189206536}
+  - component: {fileID: 894928304745380232}
   m_Layer: 0
   m_Name: slot (3)
   m_TagString: Untagged
@@ -284,7 +350,7 @@ Transform:
   m_Father: {fileID: 5150259954633115103}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6605437241189206536
+--- !u!114 &894928304745380232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,4 +362,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc133cde5ca3ef459fd05a859e4f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - type: 1
+    poses: 01000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 3
+    poses: 02000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 4
+    poses: 01000000
+    probability:
+    - 100
+    offset: 00000000
+  - type: 5
+    poses: 02000000
+    probability:
+    - 100
+    offset: 00000000
+  previewIdx: 0
+  poseIdx: 0
