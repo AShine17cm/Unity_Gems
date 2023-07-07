@@ -69,7 +69,8 @@ public class PartProto : MonoBehaviour
                     }
                 }
             }
-            string name = gameObject.name + "_" + pose;
+            int id = GlobalVariants.GetId(type, pose);
+            string name = gameObject.name + " _" + pose+ "_" + id;
             newGo.name = name;
             part.sockets = sockets;
             part.probabilites = probs;

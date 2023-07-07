@@ -6,11 +6,12 @@ public class Generator : MonoBehaviour
 {
     const float size = 1f;
     const float size_h = 0.5f;
-    const int tileCount = 64;
+    const int tileCount = 8;
 
     public int seed = 0;
     public bool generate = false;
     public PartConfig config;
+    public GameObject errorGo;
     Map map;
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class Generator : MonoBehaviour
             protos.Add(proto);
         }
         GlobalVariants.Init();
+        GlobalVariants.errorGo = errorGo;
         //收集变体的实例
         for(int i = 0; i < protos.Count; i++)
         {
@@ -39,6 +41,11 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (generate)
+        {
+            generate = false;
+            map.Clear();
+            map.Generate();
+        }
     }
 }
