@@ -61,18 +61,19 @@
     <Compile Include="Assets\CullingJob.cs" />
     <Compile Include="Assets\AutoShape\GlobalVariants.cs" />
     <Compile Include="Assets\AutoShape\Parttern.cs" />
+    <Compile Include="Assets\AutoShape\SimpleMap\SimpleMap.cs" />
+    <Compile Include="Assets\AutoShape\SimpleMap\SimpleGenerator.cs" />
     <Compile Include="Assets\Occluder.cs" />
     <Compile Include="Assets\AutoShape\BasePart.cs" />
     <Compile Include="Assets\AutoShape\PartConfig.cs" />
+    <Compile Include="Assets\AutoShape\SimpleConfig.cs" />
     <Compile Include="Assets\AutoShape\PartProto.cs" />
     <Compile Include="Assets\AutoShape\Map.cs" />
     <Compile Include="Assets\AutoShape\Part.cs" />
     <Compile Include="Assets\AutoShape\Socket.cs" />
+    <Compile Include="Assets\AutoShape\SimpleMap\Tile.cs" />
     <Compile Include="Assets\Thread Culling\Dx_ThreadCullHelper.cs" />
-    <Compile Include="Assets\AutoShape\FirstLoop\Tile.cs" />
-    <Compile Include="Assets\AutoShape\FirstLoop\SimpleMap.cs" />
-    <Compile Include="Assets\AutoShape\FirstLoop\SimpleGenerator.cs" />
-    <Compile Include="Assets\AutoShape\SimpleConfig.cs" />
+    <Compile Include="Assets\AutoShape\SimpleMap\DisplayArea.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AutoShape\Models\part.shader" />

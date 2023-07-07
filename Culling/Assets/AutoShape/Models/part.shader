@@ -42,10 +42,10 @@ Shader "Custom/part"
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
             float3 nm = IN.worldNormal;
-            fixed4 tint= nm.y > 0.1 ? _Color : _ColorSteep;
+            //fixed4 tint= nm.y > 0.1 ? _Color : _ColorSteep;
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            o.Albedo = tint.rgb* c.rgb;
+            o.Albedo = c.rgb*_Color;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;

@@ -10,7 +10,7 @@ public class SimpleGenerator : MonoBehaviour
     SimpleMap map;
     public bool generate = false;
     int tileCount = 32;
-    // Start is called before the first frame update
+    //public int seed = 0;
     void Start()
     {
         Instance = this;
@@ -30,8 +30,10 @@ public class SimpleGenerator : MonoBehaviour
         if (generate)
         {
             generate = false;
+            DisplayArea.Clear();
             map.Clear();
-            map.Generate();
+            int seed = Time.frameCount;
+            map.Generate(seed);
         }
     }
 }
