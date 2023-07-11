@@ -48,6 +48,7 @@ public class WavesCascade
         //核函数
         K_Initial_Spectrum = init_Spectrum.FindKernel("CalculateInitialSpectrum");
         K_Conjugate_Spectrum = init_Spectrum.FindKernel("CalculateConjugatedSpectrum");//共轭频谱
+
         K_Timed_Spectrum = timed_Spectrum.FindKernel("CalculateAmplitudes");
         K_Result_Texs = tex_Merge.FindKernel("FillResultTextures");
 
@@ -80,7 +81,7 @@ public class WavesCascade
         init_Spectrum.SetFloat(ID_Length_Scale, lengthScale); //250,17,5
         init_Spectrum.SetFloat(ID_Cutoff_High, cutoffHigh);   //0.0001
         init_Spectrum.SetFloat(ID_Cutoff_Low, cutoffLow);     //2*Pi*6/17
-        wavesSettings.SetParametersToShader(init_Spectrum, K_Initial_Spectrum, paramsBuffer);
+        wavesSettings.SetParametersToShader(init_Spectrum, K_Initial_Spectrum, paramsBuffer);   //wave 能量谱参数
 
         init_Spectrum.SetTexture(K_Initial_Spectrum, ID_H0K, buffer);                           //输出
         init_Spectrum.SetTexture(K_Initial_Spectrum, ID_Precompute_Data, precomputedData);      //输出
