@@ -7,7 +7,7 @@ Wave 参数
 重力，水深, 风向，风速, 海岸距离，
 
 Jonswap谱 的参数:
-波峰频率 peakImega,
+波峰频率 peakOmega
 swell，spreadBlend,shortWaveFade
 
 ----> CalculateInitialSpectrum
@@ -19,3 +19,37 @@ Precompute_Data		WavesData	256大小,float4		输出	二维波数，频率
 ----> CalculateConjugatedSpectrum
 H0_K			H0_K		256大小,float2		输入
 H0			H0		256大小,float4		输出	xy是H0_K   zw是H0_K的180旋转后的共轭
+
+--------- Runtime Spectrum  频域的计算 -------------
+相位	时间*波的频率
+振幅	H0 x 相位 的复数积					a. 振幅，频域内演算
+
+XY平面	波数 x 振幅的共轭
+
+h 和 ih 关系是90的旋转
+displaceX		ih * wave.x 		/ 波长		b. 加权波数，顶点位移		
+displaceX_dx	-h * wave.x * wave.x
+displaceX_dz	-h * wave.z * wave.z				b. 加权波数，顶点位移.高度
+
+displaceZ		ih * wave.z 		/ 波长		b. 加权波数,  顶点位移	
+dispalceZ_dx	-h * wave.x * wave.z				b. 加权波数,  顶点位移.高度
+dispalceZ_dz	-h * wave.z * wave.z
+
+displaceZ_dx  ==  displaceX_dz
+
+displaceY		h
+displaceY_dx	ih * wave.x
+displaceY_dz	ih * wave.z
+
+---------- Runtime Spectrum  转换到 空间/时域 --------
+----------- 8个stage, 用到 蝶形交换 --------------------
+Step		0-8
+输入帧 <蝶形输入.x>	+   输入帧 <蝶形输入.y> * <蝶形权重>
+每个Step 之后 交换输入输出帧
+------------ 水平，垂直 来两趟 ( 下面的描述不准确 )-------------------
+
+Dx_Dz	h * wave.x, h *wave.z	顶点位移-水平
+Dy_Dxz	h +- h * wave.x * wave.z	顶点位移-高度
+Dyx_Dyz	h * wave.x +- h * wave.z			法线
+Dxx_Dzz	h * wave.x * wave.x +-  h * wave.z * wave.z	法线
+
