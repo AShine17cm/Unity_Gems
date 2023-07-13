@@ -56,13 +56,13 @@ public class FastFourierTransform
         return rt;
     }
 
-
+    //逆傅里叶变换 从频域转换到 空间  
     public void IFFT2D(RenderTexture input, RenderTexture buffer)
     {
         int logSize = (int)Mathf.Log(size, 2);//8
         bool pingPong = false;
         //2D 逆变换 横的
-        fftShader.SetTexture(K_Horizon_IFFT, ID_Precompute_Data, precomputedData);
+        fftShader.SetTexture(K_Horizon_IFFT, ID_Precompute_Data, precomputedData);  //蝶形交换网络
         fftShader.SetTexture(K_Horizon_IFFT, ID_Buffer0, input);
         fftShader.SetTexture(K_Horizon_IFFT, ID_Buffer1, buffer);//输出
         for (int i = 0; i < logSize; i++)

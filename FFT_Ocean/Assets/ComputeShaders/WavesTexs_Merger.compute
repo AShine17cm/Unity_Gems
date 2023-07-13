@@ -23,7 +23,7 @@ void FillResultTextures(uint3 id : SV_DispatchThreadID)
 	float2 DxxDzz = Dxx_Dzz[id.xy];
 	
 	Displacement[id.xy] = float3(Lambda * DxDz.x, DyDxz.x, Lambda * DxDz.y);
-	Derivatives[id.xy] = float4(DyxDyz, DxxDzz * Lambda);
+	Derivatives[id.xy] = float4(DyxDyz, DxxDzz * Lambda);	//normal
 
 	float jacobian = (1 + Lambda * DxxDzz.x) * (1 + Lambda * DxxDzz.y) - Lambda * Lambda * DyDxz.y * DyDxz.y;
 	Turbulence[id.xy] = Turbulence[id.xy].r + DeltaTime * 0.5 / max(jacobian, 0.5);

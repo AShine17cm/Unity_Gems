@@ -1,0 +1,15 @@
+------------------- 烘焙 Prefab-------------------------------
+4.6版本	存储在每个 Render.lightmapIndex 和 lightmapScaleOffset中	容易导致场景文件合并冲突	
+5.0版本	存储在单独的 LightData中
+
+PrefabLightmapsData
+
+编辑器:  手动烘焙，并立刻收集 Prefab上相关 Render的 光照贴图信息
+运行时:  创建新的Lightmap数组，将当前场景的Lightmap放到前面，将Prefab的Lightmap放到数组的后面, 并调整 LM的 index
+
+--------------- 烘焙场景 ------------------------
+LightingData	关联场景/Scene
+烘焙多个场景	产生一个 LightingData, 包含多个LightingData 对应 多个场景/Scene
+
+------------- Shadow-Mask-----------
+用于混合 近处的实时阴影 和 远处烘焙的阴影

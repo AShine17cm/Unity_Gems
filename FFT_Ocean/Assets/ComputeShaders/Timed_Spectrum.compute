@@ -26,19 +26,19 @@ void CalculateAmplitudes(uint3 id : SV_DispatchThreadID)
 		+ ComplexMult(H0[id.xy].zw, float2(exponent.x, -exponent.y));
 	float2 ih = float2(-h.y, h.x);
 	
-	float2 displacementX = ih * wave.x * wave.y;
-	float2 displacementY = h;
-	float2 displacementZ = ih * wave.z * wave.y;
-		 
+	float2 displacementX = ih * wave.x * wave.y;				//vertex.offset
+	float2 displacementY = h;									//vertex.offset.height
+	float2 displacementZ = ih * wave.z * wave.y;				//vertex.offset
+	//dx	:	wave.x
 	float2 displacementX_dx = -h * wave.x * wave.x * wave.y;
 	float2 displacementY_dx = ih * wave.x;
-	float2 displacementZ_dx = -h * wave.x * wave.z * wave.y;
-		 
+	float2 displacementZ_dx = -h * wave.x * wave.z * wave.y;	//vertex.offset.height
+	//dz	:	wave.z
 	float2 displacementY_dz = ih * wave.z;
 	float2 displacementZ_dz = -h * wave.z * wave.z * wave.y;
-	
-	Dx_Dz[id.xy] = float2(displacementX.x - displacementZ.y, displacementX.y + displacementZ.x);
-	Dy_Dxz[id.xy] = float2(displacementY.x - displacementZ_dx.y, displacementY.y + displacementZ_dx.x);
+	//dx dz	= dz dx
+	Dx_Dz[id.xy] = float2(displacementX.x - displacementZ.y, displacementX.y + displacementZ.x);				//vertex.offset.xy
+	Dy_Dxz[id.xy] = float2(displacementY.x - displacementZ_dx.y, displacementY.y + displacementZ_dx.x);			//vertex.offset.height
 	Dyx_Dyz[id.xy] = float2(displacementY_dx.x - displacementY_dz.y, displacementY_dx.y + displacementY_dz.x);
 	Dxx_Dzz[id.xy] = float2(displacementX_dx.x - displacementZ_dz.y, displacementX_dx.y + displacementZ_dz.x);
 }

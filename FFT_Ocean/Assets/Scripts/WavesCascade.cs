@@ -72,7 +72,7 @@ public class WavesCascade
     {
         paramsBuffer?.Release();
     }
-
+    //Json 能量谱
     public void CalculateInitials(WavesSettings wavesSettings, float lengthScale,float cutoffLow, float cutoffHigh)
     {
         lambda = wavesSettings.lambda;
@@ -95,13 +95,13 @@ public class WavesCascade
 
     public void CalculateWavesAtTime(float time)
     {
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dx_Dz, DxDz);                          //输出
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dy_Dxz, DyDxz);                        //输出
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dyx_Dyz, DyxDyz);                      //输出
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dxx_Dzz, DxxDzz);                      //输出
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_H0, initialSpectrum);                  //输入
-        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Precompute_Data, precomputedData);    //输入
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_H0, initialSpectrum);                //输入
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Precompute_Data, precomputedData);   //输入
         timed_Spectrum.SetFloat(ID_Time, time);
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dx_Dz, DxDz);                        //输出
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dy_Dxz, DyDxz);                      //输出
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dyx_Dyz, DyxDyz);                    //输出
+        timed_Spectrum.SetTexture(K_Timed_Spectrum, ID_Dxx_Dzz, DxxDzz);                    //输出
         timed_Spectrum.Dispatch(K_Timed_Spectrum, group, group, 1);//<32,32,1>
 
         // Calculating IFFTs of complex amplitudes
