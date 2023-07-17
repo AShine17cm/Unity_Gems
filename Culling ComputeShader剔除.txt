@@ -1,0 +1,15 @@
+id和 bound, local矩阵信息	通过StructuredBuffer<ObjInfo>	传递到 CS shader
+将bound的8个顶点		转换到 NDC 空间
+接受数据			AppendStructuredBuffer<MatrixInfo>
+计数			ComputeBuffer.CopyCount		将计数拷贝到	IndirectArguments类型的Buffer	
+计数			使用GetData			将计数 拷贝到一个简单数组
+
+计算			8个点中是否有一个处于NDC 空间 (-1，1）
+
+----------------- Instancing ( 将可见的数据 画出 ) ---------------
+Instancing画出	Graphics.DrawMeshInsatncedIndirect
+Shader方面	instancing_options procedural:setup
+
+---------------- 问题 --------------------
+GameObject 的 ID 不同于 其Transform 的 ID
+set compute buffer 实际上是在向 GPU 传递数据，会有带宽问题

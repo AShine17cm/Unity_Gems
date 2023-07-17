@@ -1,0 +1,72 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+struct ObjInfo {
+	int id;
+	float3 boundMin;
+	float3 boundMax;
+	float4x4 localToWorldMatrix;
+	float4x4 worldToLocalMatrix;
+};
+struct MatrixInfo {
+	int id;
+	float4x4 localToWorldMatrix;
+	float4x4 worldToLocalMatrix;
+};
+uint instanceCount;
+float aspect;
+float4x4 vpMatrix;
+StructuredBuffer<ObjInfo> input;
+AppendStructuredBuffer<MatrixInfo> cullResult;
+
+//RWTexture2D<float4> Result;
+
+[numthreads(64, 1, 1)]
+void CSMain(uint3 groupId:SV_GroupID, uint3 id : SV_DispatchThreadID)
+{
+	if (groupId.x * groupId.y * groupId.z * 64 + id.x >= instanceCount)
+		return;
+
+	ObjInfo info = input[id.x];
+	float3 boundMax = info.boundMax;
+	float3 boundMin = info.boundMin;
+	float4 boundVerts[8];
+	float4x4 mvpMatrix = mul(vpMatrix, info.localToWorldMatrix);
+	boundVerts[0] = mul(mvpMatrix, float4(boundMin, 1));
+	boundVerts[1] = mul(mvpMatrix, float4(boundMax, 1));
+	boundVerts[2] = mul(mvpMatrix, float4(boundMax.x, boundMax.y, boundMin.z, 1));
+	boundVerts[3] = mul(mvpMatrix, float4(boundMax.x, boundMin.y, boundMax.z, 1));
+	boundVerts[4] = mul(mvpMatrix, float4(boundMin.x, boundMax.y, boundMax.z, 1));
+	boundVerts[5] = mul(mvpMatrix, float4(boundMin.x, boundMax.y, boundMin.z, 1));
+	boundVerts[6] = mul(mvpMatrix, float4(boundMax.x, boundMin.y, boundMin.z, 1));
+	boundVerts[7] = mul(mvpMatrix, float4(boundMin.x, boundMin.y, boundMax.z, 1));
+
+	bool isInside = false;
+	//any point in the frustrum ?
+	for (int i = 0; i < 8; i++)
+	{
+		float4 boundVert = boundVerts[i];
+		boundVert = boundVert / boundVert.w;
+		float k = 1;
+		//w does-not equal 1
+		//bool isX = boundVert.x <= aspect && boundVert.x >= -aspect;
+		//bool isY = boundVert.y <= k && boundVert.y >= -k;
+		//bool isZ = boundVert.z <= k && boundVert.z >= -k;
+		bool isX = abs(boundVert.x) <= aspect;
+		bool isY = abs(boundVert.y) <= abs(k);
+		bool isZ = abs(boundVert.z) <= abs(k);
+		//isX = true;
+		//isY = true;
+		//isZ = true;
+		bool isXYZ = isX && isY && isZ;
+		isInside = isInside || isXYZ;
+	}
+	if (isInside)
+	{
+		MatrixInfo matInfo;
+		matInfo.id = info.id;
+		matInfo.localToWorldMatrix = info.localToWorldMatrix;
+		matInfo.worldToLocalMatrix = info.worldToLocalMatrix;
+		cullResult.Append(matInfo);
+	}
+}

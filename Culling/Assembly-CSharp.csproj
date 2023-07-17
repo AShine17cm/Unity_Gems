@@ -56,14 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TestJob.cs" />
+    <Compile Include="Assets\Thread Culling\TestJob.cs" />
+    <Compile Include="Assets\Thread Culling\SceneHelper.cs" />
     <Compile Include="Assets\AutoShape\Generator.cs" />
-    <Compile Include="Assets\CullingJob.cs" />
+    <Compile Include="Assets\Thread Culling\CullingJob.cs" />
     <Compile Include="Assets\AutoShape\GlobalVariants.cs" />
     <Compile Include="Assets\AutoShape\Parttern.cs" />
     <Compile Include="Assets\AutoShape\SimpleMap\SimpleMap.cs" />
     <Compile Include="Assets\AutoShape\SimpleMap\SimpleGenerator.cs" />
-    <Compile Include="Assets\Occluder.cs" />
+    <Compile Include="Assets\Thread Culling\Occluder.cs" />
     <Compile Include="Assets\AutoShape\BasePart.cs" />
     <Compile Include="Assets\AutoShape\PartConfig.cs" />
     <Compile Include="Assets\AutoShape\SimpleConfig.cs" />
@@ -72,11 +73,14 @@
     <Compile Include="Assets\AutoShape\SimpleMap\DisplayArea.cs" />
     <Compile Include="Assets\AutoShape\Part.cs" />
     <Compile Include="Assets\AutoShape\Socket.cs" />
+    <Compile Include="Assets\Compute Culling\DrawIndirectCulled.cs" />
     <Compile Include="Assets\AutoShape\SimpleMap\Tile.cs" />
     <Compile Include="Assets\Thread Culling\Dx_ThreadCullHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Compute Culling\IndirectDraw.shader" />
     <None Include="Assets\AutoShape\Models\part.shader" />
+    <None Include="Assets\Compute Culling\FrustrumCull.compute" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
