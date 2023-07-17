@@ -72,7 +72,7 @@ public class DrawIndirectCulled : MonoBehaviour
         int groups = instanceCount / 64;
         if (instanceCount % 64 > 0) groups += 1;
         compute.Dispatch(kernel, groups, 1, 1);
-
+        
         //¶Á»ØÊý¾Ý
         ComputeBuffer.CopyCount(cullResult, counterBuffer, 0);
         counterBuffer.GetData(counter);

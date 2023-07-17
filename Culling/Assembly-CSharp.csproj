@@ -80,7 +80,7 @@
   <ItemGroup>
     <None Include="Assets\Compute Culling\IndirectDraw.shader" />
     <None Include="Assets\AutoShape\Models\part.shader" />
-    <None Include="Assets\Compute Culling\FrustrumCull.compute" />
+    <None Include="Assets\Compute Culling\FrustumCull.compute" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
