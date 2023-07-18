@@ -1,0 +1,26 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Downscale
+
+float4 RTSize;
+Texture2D<float4> inputRT;
+RWTexture2D<float4> outputRT;
+SamplerState sampler_inputRT
+{
+    Filter = POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+[numthreads(8,8,1)]
+void Downscale (uint3 id : SV_DispatchThreadID)
+{
+    uint4 size = { (uint)RTSize.x,(uint)RTSize.y,0,0 };
+
+    if (all(id.xy < size.xy)) 
+    {
+        float2 uv = (id.xy + 0.5) / RTSize.xy;
+        float4 depths = inputRT.Gather(sampler_inputRT, uv);
+        float val = max(max(depths.x, depths.y), max(depths.z, depths.w));
+        outputRT[id.xy] = 1;// val;
+    }
+}

@@ -69,6 +69,7 @@
     <Compile Include="Assets\AutoShape\PartConfig.cs" />
     <Compile Include="Assets\AutoShape\SimpleConfig.cs" />
     <Compile Include="Assets\AutoShape\PartProto.cs" />
+    <Compile Include="Assets\Compute Culling\Hiz_Helper.cs" />
     <Compile Include="Assets\AutoShape\Map.cs" />
     <Compile Include="Assets\AutoShape\SimpleMap\DisplayArea.cs" />
     <Compile Include="Assets\AutoShape\Part.cs" />
@@ -81,6 +82,7 @@
     <None Include="Assets\Compute Culling\IndirectDraw.shader" />
     <None Include="Assets\AutoShape\Models\part.shader" />
     <None Include="Assets\Compute Culling\FrustumCull.compute" />
+    <None Include="Assets\Compute Culling\Hiz_mipmap.compute" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
